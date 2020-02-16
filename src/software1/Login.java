@@ -47,7 +47,6 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jBotonIniciarSesion = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jContraseñaField = new javax.swing.JTextField();
         jCCField = new javax.swing.JTextField();
         jComboUsuario = new javax.swing.JComboBox<String>();
@@ -75,14 +74,6 @@ public class Login extends javax.swing.JFrame {
         jBotonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBotonIniciarSesionActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Recuperar contraseña");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
             }
         });
 
@@ -136,10 +127,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(203, 203, 203)
-                        .addComponent(jBotonIniciarSesion))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel5)))
+                        .addComponent(jBotonIniciarSesion)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -163,9 +151,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jContraseñaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jBotonIniciarSesion)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,12 +182,6 @@ public class Login extends javax.swing.JFrame {
         
          
     }//GEN-LAST:event_jBotonIniciarSesionActionPerformed
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        recuperarcontraseña r1 = new recuperarcontraseña();
-        r1.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jCCFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCCFieldActionPerformed
         // TODO add your handling code here:
@@ -324,7 +304,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

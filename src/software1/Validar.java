@@ -6,6 +6,8 @@
 package software1;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -88,26 +90,89 @@ public class Validar {
     
     
     public  void validarTex(String caracter) {
-    Scanner entrada = new Scanner(System.in);
-    boolean texto;
-    do {
+    
         System.out.println("Por favor ingrese solo letras");
-        caracter = entrada.next();
-        if (caracter.matches("^[A-Za-z ]*$")) {
+        
+        if (caracter.matches("^[A-Z ]*$")) {
             System.out.println("Informacion valida");
-            texto = true;
- 
+            System.out.println(caracter);
+         
         } else {
-            System.out.println("No ha ingresado caracteres");
-            texto = false;
+            System.out.println("Se admite solo MAYUSCULAS");
+            JOptionPane.showMessageDialog(null,  "Se admite solo MAYUSCULAS");  
+           
         }
-    } while (!texto);
-   
- 
     }//fin validar texto
 
      
-
+    public  void validarDireccion(String caracter) {
+    
+        System.out.println("Por favor ingrese solo letras");
+        
+        if (caracter.matches("^[A-Z0-9-\\ ]*$")) {
+            System.out.println("Informacion valida");
+            System.out.println(caracter);
+         
+        } else {
+            System.out.println("Se admite solo MAYUSCULAS");
+            JOptionPane.showMessageDialog(null,  "Se admite solo MAYUSCULAS");  
+           
+        }
+    }//fin validar direccion
+    
+    
+    
+    
+    
+    
+    public void validarCorreo(String email)
+    {
+ 
+        // Patrón para validar el email
+        Pattern pattern = Pattern.compile("^[_a-z0-9-\\+]+(\\.[_a-z0-9-]+)*@" + "[a-z0-9-]+(\\.[a-z0-9]+)*(\\.[a-z]{2,})$");
+ 
+        // El email a validar
+      //  String email = "info@programacionextrema.com";
+ 
+        Matcher mather = pattern.matcher(email);
+ 
+        if (mather.find() == true) {
+            System.out.println("El email ingresado es válido.");
+        } else {
+            System.out.println("El email ingresado es inválido.");
+            JOptionPane.showMessageDialog(null,  "Se admite solo minusculas"); 
+        }
+    }
+    
+    
+    
+        public void validarTelefonoC(String telefono)
+    {
+ 
+        // Patrón para validar el email
+        //Pattern pattern = Pattern.compile("^[_a-z0-9-\\+]+(\\.[_a-z0-9-]+)*@" + "[a-z0-9-]+(\\.[a-z0-9]+)*(\\.[a-z]{2,})$");
+        Pattern pattern = Pattern.compile("^(/^[8]{1}[1-9]{2}[0-9]{5}$/");
+        // El email a validar
+      //  String email = "info@programacionextrema.com";
+ 
+        Matcher mather = pattern.matcher(telefono);
+ 
+        if (mather.find() == true) {
+            System.out.println("El telefono ingresado es válido.");
+        } else {
+            System.out.println("El telefono ingresado es inválido.");
+            JOptionPane.showMessageDialog(null,  "Se admite solo números"); 
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }//fin toda la clase
     
     
