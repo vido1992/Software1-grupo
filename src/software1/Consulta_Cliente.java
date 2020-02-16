@@ -16,7 +16,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
      */
     public Consulta_Cliente() {
         initComponents();
-        this.setTitle("SiGCIF-PRIMAX"); 
+        this.setTitle("Consultar cliente"); 
         this.setLocationRelativeTo(null);
     }
 

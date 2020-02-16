@@ -16,7 +16,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
      */
     public Actualizar_Cliente() {
         initComponents();
-        this.setTitle("SiGCIF-PRIMAX"); 
+        this.setTitle("SiGCIF-PRIMAX. Actualizar cliente"); 
         this.setLocationRelativeTo(null);
     }
 
