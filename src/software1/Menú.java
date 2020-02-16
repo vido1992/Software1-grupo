@@ -94,6 +94,11 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenu6.setText("Registrar Cliente");
 
         jMenuItem7.setText("Estándar");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem7);
 
         jMenuItem2.setText("Prepago");
@@ -147,6 +152,13 @@ Registro_Cliente RC=new Registro_Cliente();
             RC.setVisible(true);
             RC.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+this.setVisible(false);
+                
+                RC.setVisible(true);
+                RC.setEnabled(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
