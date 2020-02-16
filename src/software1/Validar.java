@@ -59,14 +59,14 @@ public class Validar {
         } catch (NumberFormatException nfe) {
         cedulaCorrecta = false;
         } catch (Exception err) {
-        System.out.println("Una excepcion ocurrio en el proceso de validadcion");
+        System.out.println("Una excepción ocurrido en el proceso de validación");
 
         cedulaCorrecta = false;
         }
 
         if (!cedulaCorrecta) {
-        System.out.println("La Cédula ingresada es Incorrecta");
-        JOptionPane.showMessageDialog(null, "La Cédula ingresada es Incorrecta");
+        System.out.println("La cédula ingresada es incorrecta");
+        JOptionPane.showMessageDialog(null, "La cédula ingresada es incorrecta");
         }
         return cedulaCorrecta;
     }//fin metodo validar cedula
@@ -82,7 +82,7 @@ public class Validar {
         {
             if(this.validadorDeCedula(cedula))
             {
-               System.out.println( "Cedula Correcta");  
+               System.out.println( "Cedula correcta");  
             }
         }  else  this.validadorDeCedula(cedula);
     }//fin validarCC
@@ -94,12 +94,12 @@ public class Validar {
         System.out.println("Por favor ingrese solo letras");
         
         if (caracter.matches("^[A-Z ]*$")) {
-            System.out.println("Informacion valida");
+            System.out.println("Información válida");
             System.out.println(caracter);
          
         } else {
-            System.out.println("Se admite solo MAYUSCULAS");
-            JOptionPane.showMessageDialog(null,  "Se admite solo MAYUSCULAS");  
+            System.out.println("Se admite solo MAYÚSCULAS");
+            JOptionPane.showMessageDialog(null,  "Se admite solo MAYÚSCULAS");  
            
         }
     }//fin validar texto
@@ -110,12 +110,12 @@ public class Validar {
         System.out.println("Por favor ingrese solo letras");
         
         if (caracter.matches("^[A-Z0-9-\\ ]*$")) {
-            System.out.println("Informacion valida");
+            System.out.println("Información válida");
             System.out.println(caracter);
          
         } else {
-            System.out.println("Se admite solo MAYUSCULAS");
-            JOptionPane.showMessageDialog(null,  "Se admite solo MAYUSCULAS");  
+            System.out.println("Se admite solo MAYÚSCULAS");
+            JOptionPane.showMessageDialog(null,  "Se admite solo MAYÚSCULAS");  
            
         }
     }//fin validar direccion
@@ -140,7 +140,7 @@ public class Validar {
             System.out.println("El email ingresado es válido.");
         } else {
             System.out.println("El email ingresado es inválido.");
-            JOptionPane.showMessageDialog(null,  "Se admite solo minusculas"); 
+            JOptionPane.showMessageDialog(null,  "Se admite solo minúsculas"); 
         }
     }
     
@@ -149,15 +149,15 @@ public class Validar {
     public void validarTelefonoC(String telefono)
     {
  
-        System.out.println("El telefono ingresado?.");
+        System.out.println("El teléfono ingresado?.");
         Pattern pattern = Pattern.compile("^(09)[5-9]{1}[0-9]{7}$");
         Matcher mather = pattern.matcher(telefono);
  
         if (mather.find() == true) {
-            System.out.println("El telefono ingresado es válido.");
+            System.out.println("El teléfono ingresado es válido.");
         } else {
-            System.out.println("El telefono ingresado es inválido.");
-            JOptionPane.showMessageDialog(null,  "Se admite solo números y un total de 10 digitos "); 
+            System.out.println("El teléfono ingresado es inválido.");
+            JOptionPane.showMessageDialog(null,  "Se admite solo números y un total de 10 dígitos "); 
         }
     }
     
@@ -168,10 +168,10 @@ public class Validar {
             Matcher mather = pattern.matcher(placa);
 
             if (mather.find() == true) {
-                System.out.println("La placa es válido.");
+                System.out.println("La placa es válida.");
             } else {
-                System.out.println("La placa es inválido.");
-                JOptionPane.showMessageDialog(null,  "Se admite del segun el formato: PPP-1111 "); 
+                System.out.println("La placa es inválida.");
+                JOptionPane.showMessageDialog(null,  "Se admite del según el formato: PPP-1111 "); 
             }
         }
     

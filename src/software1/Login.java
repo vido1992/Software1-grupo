@@ -222,7 +222,7 @@ public class Login extends javax.swing.JFrame {
                 m1.setVisible(true);
                 m1.setEnabled(true);
                 }else if(intentos == 3){
-                    JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos. Vuelva mas tarde");
+                    JOptionPane.showMessageDialog(null, "Ha excedido el número de intentos. Vuelva más tarde");
                     System.exit(0);
                 }else{
                     JOptionPane.showMessageDialog(null, "Contraseña o usuario incorrecto. Asegúrese de introducir correctamente sus datos. \n Quedan " + (3 - intentos) + " intentos.");

@@ -51,7 +51,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("CI/RUC/Pasaporte");
+        jLabel2.setText("CI");
 
         jLabel3.setText("Nombres");
 
