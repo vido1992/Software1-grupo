@@ -66,7 +66,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Seleccione tipo de usuario");
 
-        jLabel3.setText("CI/RUC/Pasaporte");
+        jLabel3.setText("CI");
 
         jLabel4.setText("Contraseña:");
 
