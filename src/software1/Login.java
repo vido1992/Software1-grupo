@@ -5,12 +5,22 @@
  */
 package software1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author David
  */
 public class Login extends javax.swing.JFrame {
+ Validar validar= new Validar();
+ 
+     public int SELECCIÓN = 0, ADMINISTRADOR = 1, OPERADOR = 2;
 
+    public String PASS_ADMIN = "1234", PASS_USER = "123";
+    public String CI_ADMIN = "0503018707", CI_USER = "1711112969";
+    int intentos;
+ 
+ 
     /**
      * Creates new form Login
      */
@@ -40,6 +50,11 @@ public class Login extends javax.swing.JFrame {
         jComboUsuario = new javax.swing.JComboBox<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel6.setText("Bienvenido");
@@ -173,16 +188,10 @@ public class Login extends javax.swing.JFrame {
     private void jBotonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonIniciarSesionActionPerformed
 
         validar.validarCC(this.jCCField.getText().toString());
-        /*if(evt.getSource()==jBotonIniciarSesion){
-            JOptionPane.showMessageDialog(null, "despacho");
-        }*/
-
-        //Para validar mi ingreso cuento con esos 2 parametros
-        // String res = validarIngreso(jComboUsuario.getSelectedIndex(), jContraseñaField.getText());
-
-        validarIngreso(jComboUsuario.getSelectedIndex(), jCCField.getText(), jContraseñaField.getText());
-
-        //JOptionPane.showMessageDialog(null, res);
+        
+        String res = validarIngreso(jComboUsuario.getSelectedIndex(), jCCField.getText(), jContraseñaField.getText());
+        
+         
     }//GEN-LAST:event_jBotonIniciarSesionActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -213,6 +222,70 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboUsuarioActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+ if(JOptionPane.showConfirmDialog(null,"¿Está seguro?")==0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_formWindowClosing
+
+    
+    public void validarPass(int index, String CI, String pass){
+
+        switch (index) {
+            case 1:
+                if(pass.equals(PASS_ADMIN)&&CI.equals(CI_ADMIN)){
+                this.setVisible(false);
+                Menú m1=new Menú();
+                m1.setVisible(true);
+                m1.setEnabled(true);
+                }else if(intentos == 3){
+                    JOptionPane.showMessageDialog(null, "Ha excedido el numero de intentos. Vuelva mas tarde");
+                    System.exit(0);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Contraseña o usuario incorrecto. Asegúrese de introducir correctamente sus datos. \n Quedan " + (3 - intentos) + " intentos.");
+                    jCCField.setText("");
+                    jContraseñaField.setText("");
+                    intentos = intentos + 1;
+                }
+                break;
+                
+            case 2:
+                if(pass.equals(PASS_USER)&&CI.equals(CI_USER)){
+                JOptionPane.showMessageDialog(null, "Ha iniciado sesión como operador operador");
+                this.setVisible(false);
+                Menú m1=new Menú();
+                m1.setVisible(true);
+                m1.setEnabled(true);
+               // m1.asignarOperador();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Contraseña o usuario incorrecto. Asegúrese de introducir correctamente sus datos.");
+                }
+                break;
+        }
+
+    }
+    
+     public String validarIngreso(int index, String CI, String pass){
+
+        String retorno = "";
+
+        if(index == SELECCIÓN){
+            retorno = "No se ha seleccionado usuario";
+        }else{
+            /*if(index==ADMINISTRADOR){
+                //retorno="Se ha seleccionado Administrador";
+                this.setVisible(false);
+                Menú m1=new Menú();
+                m1.setVisible(true);
+                m1.setEnabled(true);
+            }else{
+                retorno="Se ha seleccionado Operador";
+            }*/
+            validarPass(index, CI, pass);
+        }
+
+        return retorno;
+    }
     /**
      * @param args the command line arguments
      */

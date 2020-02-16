@@ -163,7 +163,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonRegistrarActionPerformed
-        this.jPanelRegistroCli.updateUI();
+        
         System.out.println(this.CCCRegistro.getText().toString());
         //validar.validarCC(this.CCClienteRegistro.getText().toString());
 
