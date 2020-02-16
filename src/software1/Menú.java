@@ -5,6 +5,8 @@
  */
 package software1;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author David
@@ -21,6 +23,7 @@ Registro_Cliente RC=new Registro_Cliente();
         
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,7 +44,18 @@ Registro_Cliente RC=new Registro_Cliente();
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
-        jButton1 = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -75,28 +89,52 @@ Registro_Cliente RC=new Registro_Cliente();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Registro Cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jMenu5.setText("Cliente");
+
+        jMenu6.setText("Registrar Cliente");
+
+        jMenuItem7.setText("Estándar");
+        jMenu6.add(jMenuItem7);
+
+        jMenuItem2.setText("Prepago");
+        jMenu6.add(jMenuItem2);
+
+        jMenuItem3.setText("Pospago");
+        jMenu6.add(jMenuItem3);
+
+        jMenu5.add(jMenu6);
+
+        jMenuItem4.setText("Consultar");
+        jMenu5.add(jMenuItem4);
+
+        jMenuItem5.setText("Actualizar");
+        jMenu5.add(jMenuItem5);
+
+        jMenuItem6.setText("Eliminar");
+        jMenu5.add(jMenuItem6);
+
+        jMenuBar2.add(jMenu5);
+
+        jMenu7.setText("Ventas y facturación");
+        jMenuBar2.add(jMenu7);
+
+        jMenu8.setText("Inventario");
+        jMenuBar2.add(jMenu8);
+
+        jMenu9.setText("Empleado");
+        jMenuBar2.add(jMenu9);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(220, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(260, 260, 260))
+            .addGap(0, 723, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jButton1)
-                .addContainerGap(251, Short.MAX_VALUE))
+            .addGap(0, 422, Short.MAX_VALUE)
         );
 
         pack();
@@ -147,14 +185,25 @@ Registro_Cliente RC=new Registro_Cliente();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
