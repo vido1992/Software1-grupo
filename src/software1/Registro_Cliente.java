@@ -51,7 +51,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("CI/RUC/Pasaporte");
+        jLabel2.setText("CC/RUC/Pasaporte");
 
         jLabel3.setText("Nombres");
 
@@ -160,7 +160,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,26 +175,44 @@ public class Registro_Cliente extends javax.swing.JFrame {
 
     private void jBotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonRegistrarActionPerformed
         //{}
-        if(this.CCCRegistro.getText().equals("") || NombreClienteRegistro.getText().equals("") || this.ApellidosClienteRegistro.getText().equals("") ||
+       /* if(this.CCCRegistro.getText().equals("") || NombreClienteRegistro.getText().equals("") || this.ApellidosClienteRegistro.getText().equals("") ||
           this.DireccionClienteRegistro.getText().equals("") ||  this.CorreoElectronico.getText().equals("") || this.TelefonoClienteRegistro.equals("") 
-                || this.PlacaClienteRegistro.getText().equals("") )
-        {
-          JOptionPane.showMessageDialog(null,  " No se admite items vacios");   
-            
-        }
-        else 
-        {
-          System.out.println(this.CCCRegistro.getText().toString());
-            validar.validarCC(this.CCCRegistro.getText().toString());
-            validar.validarTex(this.NombreClienteRegistro.getText().toString());
-            validar.validarTex(this.ApellidosClienteRegistro.getText().toString());
-            validar.validarDireccion(this.DireccionClienteRegistro.getText().toString());
-            validar.validarCorreo(this.CorreoElectronico.getText().toString());
-            validar.validarTelefonoC(this.TelefonoClienteRegistro.getText());
-            validar.validarPlaca(this.PlacaClienteRegistro.getText().toString());
- 
-          
-          }  
+                || this.PlacaClienteRegistro.getText().equals("") ){
+            JOptionPane.showMessageDialog(null,  "No se permite campos vacios","CAMPOS VACIO", JOptionPane.WARNING_MESSAGE); 
+        } */   
+           if(this.CCCRegistro.getText().equals(""))
+           {
+               JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO CC VACIO", JOptionPane.WARNING_MESSAGE); 
+           }else if( NombreClienteRegistro.getText().equals("") ){
+               JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO NOMBRES VACIO", JOptionPane.WARNING_MESSAGE); 
+               }else if(this.ApellidosClienteRegistro.getText().equals(""))
+                       {
+                           JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO APELLIDOS VACIO", JOptionPane.WARNING_MESSAGE); 
+                           } else if (this.DireccionClienteRegistro.getText().equals(""))
+                           {
+                               JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO DIRECCION VACIO", JOptionPane.WARNING_MESSAGE);  
+                           } else if( this.CorreoElectronico.getText().equals(""))
+                               {
+                                   JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO E-MAIL VACIO", JOptionPane.WARNING_MESSAGE);  
+                               }else if( this.TelefonoClienteRegistro.getText().equals(""))
+                               {
+                                   JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO TELEFONO CELULAR VACIO", JOptionPane.WARNING_MESSAGE); 
+                               }else if(this.PlacaClienteRegistro.getText().equals(""))
+                                   {
+                                       JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO PLACA DEL VEHICULO VACIO", JOptionPane.WARNING_MESSAGE); 
+                                   }else 
+            {
+              System.out.println(this.CCCRegistro.getText().toString());
+              validar.validarCC(this.CCCRegistro.getText().toString());
+              validar.validarTex(this.NombreClienteRegistro.getText().toString());
+              validar.validarTex(this.ApellidosClienteRegistro.getText().toString());
+              validar.validarDireccion(this.DireccionClienteRegistro.getText().toString());
+              validar.validarCorreo(this.CorreoElectronico.getText().toString());
+              validar.validarTelefonoC(this.TelefonoClienteRegistro.getText());
+              validar.validarPlaca(this.PlacaClienteRegistro.getText().toString());
+
+
+            }  
         
         
         

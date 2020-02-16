@@ -6,6 +6,7 @@
 package software1;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -65,8 +66,8 @@ public class Validar {
         }
 
         if (!cedulaCorrecta) {
-        System.out.println("La Cédula ingresada es Incorrecta");
-        JOptionPane.showMessageDialog(null, "La Cédula ingresada es Incorrecta");
+        System.out.println("Número de ciudadanía incorrecto");
+        JOptionPane.showMessageDialog(null,  "Número de ciudadanía incorrecto","CAMPO CC INCORRECTO", JOptionPane.WARNING_MESSAGE);  
         }
         return cedulaCorrecta;
     }//fin metodo validar cedula
@@ -82,7 +83,8 @@ public class Validar {
         {
             if(this.validadorDeCedula(cedula))
             {
-               System.out.println( "Cedula Correcta");  
+               
+                System.out.println( "Cédula Correcta");  
             }
         }  else  this.validadorDeCedula(cedula);
     }//fin validarCC
@@ -91,16 +93,30 @@ public class Validar {
     
     public  void validarTex(String caracter) {
     
-        System.out.println("Por favor ingrese solo letras");
+        //System.out.println("Por favor ingrese solo letras");
         
-        if (caracter.matches("^[A-Z ]*$")) {
-            System.out.println("Informacion valida");
-            System.out.println(caracter);
+       int contador=0;	
+ //      String nombre="Angel Fernandes ";
+	StringTokenizer tokens=new StringTokenizer(caracter);
+	while(tokens.hasMoreTokens()){
+            contador++;
+            System.out.println(tokens.nextToken());
+        }
+        System.out.println("cantidad de token"+contador);
+        if(contador==2)
+        {
+            System.out.println("ingresado correcto"+contador);
          
+            if (caracter.matches("^[A-ZÑÁÉÍÓÚ ]*$")) {
+            System.out.println("Informacion valida");
+            System.out.println(caracter); 
         } else {
-            System.out.println("Se admite solo MAYUSCULAS");
-            JOptionPane.showMessageDialog(null,  "Se admite solo MAYUSCULAS");  
-           
+            System.out.println("Solo se aceptan letras, tildes y espacios, con un límite de 50 caracteres además de ser en mayúsculas");
+            JOptionPane.showMessageDialog(null,  "Solo se aceptan letras, tildes y espacios, con un límite de 50 caracteres además de ser en mayúsculas"
+            ,"CAMPO INCORRECTO", JOptionPane.WARNING_MESSAGE);  
+            }
+        }else {
+            System.out.println("debe ingresar dos nombre o dos apellidos"+contador);
         }
     }//fin validar texto
 
