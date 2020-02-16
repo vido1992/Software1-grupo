@@ -82,7 +82,7 @@ public class Validar {
         {
             if(this.validadorDeCedula(cedula))
             {
-                JOptionPane.showMessageDialog(null,  "Cedula Correcta");  
+               System.out.println( "Cedula Correcta");  
             }
         }  else  this.validadorDeCedula(cedula);
     }//fin validarCC

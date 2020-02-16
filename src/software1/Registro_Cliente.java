@@ -13,9 +13,9 @@ import javax.swing.JOptionPane;
  */
 public class Registro_Cliente extends javax.swing.JFrame {
  Validar validar= new Validar();
-    /**
-     * Creates new form Registro_Cliente
-     */
+ 
+ 
+ 
     public Registro_Cliente() {
         initComponents();
         this.setTitle("SiGCIF-PRIMAX"); 
@@ -47,6 +47,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
         CCCRegistro = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         CorreoElectronico = new javax.swing.JTextField();
+        jButtonRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +72,13 @@ public class Registro_Cliente extends javax.swing.JFrame {
 
         jLabel8.setText("Correo Electronico");
 
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -79,9 +87,11 @@ public class Registro_Cliente extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
+                        .addGap(90, 90, 90)
                         .addComponent(jBotonRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonRegresar)
+                        .addGap(106, 106, 106))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -97,7 +107,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
                             .addComponent(CorreoElectronico)
                             .addComponent(NombreClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 45, Short.MAX_VALUE)
                                 .addComponent(TelefonoClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(DireccionClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -137,7 +147,9 @@ public class Registro_Cliente extends javax.swing.JFrame {
                     .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(17, 17, 17)
-                .addComponent(jBotonRegistrar)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBotonRegistrar)
+                    .addComponent(jButtonRegresar))
                 .addGap(99, 99, 99))
         );
 
@@ -188,6 +200,14 @@ public class Registro_Cliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jBotonRegistrarActionPerformed
 
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+                this.setVisible(false);
+                  Menu m=new Menu();
+               m.setVisible(true);
+               m.setEnabled(true);
+        
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,6 +252,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
     private javax.swing.JTextField PlacaClienteRegistro;
     private javax.swing.JTextField TelefonoClienteRegistro;
     private javax.swing.JButton jBotonRegistrar;
+    private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
  Validar validar= new Validar();
- Menú m1=new Menú();
+ Menu m1=new Menu();
      public int SELECCIÓN = 0, ADMINISTRADOR = 1, OPERADOR = 2;
 
     public String PASS_ADMIN = "1234", PASS_USER = "123";
