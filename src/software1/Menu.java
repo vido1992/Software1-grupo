@@ -91,7 +91,7 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.setText("Cliente");
 
-        jMenu6.setText("Registrar Cliente");
+        jMenu6.setText("Registrar cliente");
 
         jMenuItem7.setText("Estándar");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -109,13 +109,13 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.add(jMenu6);
 
-        jMenuItem4.setText("Consultar");
+        jMenuItem4.setText("Consultar cliente");
         jMenu5.add(jMenuItem4);
 
-        jMenuItem5.setText("Actualizar");
+        jMenuItem5.setText("Actualizar cliente");
         jMenu5.add(jMenuItem5);
 
-        jMenuItem6.setText("Eliminar");
+        jMenuItem6.setText("Eliminar cliente");
         jMenu5.add(jMenuItem6);
 
         jMenuBar2.add(jMenu5);
