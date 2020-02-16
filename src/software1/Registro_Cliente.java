@@ -51,11 +51,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-<<<<<<< HEAD
-        jLabel2.setText("CC/RUC/Pasaporte");
-=======
-        jLabel2.setText("CI");
->>>>>>> 6eded28f698e26877f252f36833eca7ef93982d7
+        jLabel2.setText("Cedula de Ciudadania");
 
         jLabel3.setText("Nombres");
 
@@ -164,7 +160,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
