@@ -13,11 +13,11 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
  Validar validar= new Validar();
- 
+ Menú m1=new Menú();
      public int SELECCIÓN = 0, ADMINISTRADOR = 1, OPERADOR = 2;
 
     public String PASS_ADMIN = "1234", PASS_USER = "123";
-    public String CI_ADMIN = "0503018707", CI_USER = "1711112969";
+    public String CI_ADMIN = "1724307135", CI_USER = "1711112969";
     int intentos;
  
  
@@ -26,6 +26,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+         
+        this.setTitle("SiGCIF-PRIMAX");        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -235,7 +238,7 @@ public class Login extends javax.swing.JFrame {
             case 1:
                 if(pass.equals(PASS_ADMIN)&&CI.equals(CI_ADMIN)){
                 this.setVisible(false);
-                Menú m1=new Menú();
+                
                 m1.setVisible(true);
                 m1.setEnabled(true);
                 }else if(intentos == 3){
@@ -253,7 +256,7 @@ public class Login extends javax.swing.JFrame {
                 if(pass.equals(PASS_USER)&&CI.equals(CI_USER)){
                 JOptionPane.showMessageDialog(null, "Ha iniciado sesión como operador operador");
                 this.setVisible(false);
-                Menú m1=new Menú();
+               
                 m1.setVisible(true);
                 m1.setEnabled(true);
                // m1.asignarOperador();
@@ -272,15 +275,6 @@ public class Login extends javax.swing.JFrame {
         if(index == SELECCIÓN){
             retorno = "No se ha seleccionado usuario";
         }else{
-            /*if(index==ADMINISTRADOR){
-                //retorno="Se ha seleccionado Administrador";
-                this.setVisible(false);
-                Menú m1=new Menú();
-                m1.setVisible(true);
-                m1.setEnabled(true);
-            }else{
-                retorno="Se ha seleccionado Operador";
-            }*/
             validarPass(index, CI, pass);
         }
 

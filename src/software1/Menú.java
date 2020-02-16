@@ -10,12 +10,15 @@ package software1;
  * @author David
  */
 public class Menú extends javax.swing.JFrame {
-
+Registro_Cliente RC=new Registro_Cliente();
     /**
      * Creates new form Menú
      */
     public Menú() {
         initComponents();
+        this.setTitle("SiGCIF-PRIMAX"); 
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -38,6 +41,7 @@ public class Menú extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
+        jButton1 = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -71,19 +75,40 @@ public class Menú extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jButton1.setText("Registro Cliente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 603, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(220, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(260, 260, 260))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(jButton1)
+                .addContainerGap(251, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        
+        
+            RC.setVisible(true);
+            RC.setEnabled(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,11 +141,13 @@ public class Menú extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menú().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;

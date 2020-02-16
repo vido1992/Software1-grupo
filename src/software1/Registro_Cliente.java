@@ -16,6 +16,8 @@ public class Registro_Cliente extends javax.swing.JFrame {
      */
     public Registro_Cliente() {
         initComponents();
+        this.setTitle("SiGCIF-PRIMAX"); 
+        this.setLocationRelativeTo(null);
     }
 
     /**
