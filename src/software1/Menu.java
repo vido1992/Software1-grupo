@@ -91,7 +91,7 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.setText("Cliente");
 
-        jMenu6.setText("Registrar Cliente");
+        jMenu6.setText("Registrar cliente");
 
         jMenuItem7.setText("Estándar");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
