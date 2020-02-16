@@ -146,25 +146,34 @@ public class Validar {
     
     
     
-        public void validarTelefonoC(String telefono)
+    public void validarTelefonoC(String telefono)
     {
  
-        // Patrón para validar el email
-        //Pattern pattern = Pattern.compile("^[_a-z0-9-\\+]+(\\.[_a-z0-9-]+)*@" + "[a-z0-9-]+(\\.[a-z0-9]+)*(\\.[a-z]{2,})$");
-        Pattern pattern = Pattern.compile("^(/^[8]{1}[1-9]{2}[0-9]{5}$/");
-        // El email a validar
-      //  String email = "info@programacionextrema.com";
- 
+        System.out.println("El telefono ingresado?.");
+        Pattern pattern = Pattern.compile("^(09)[5-9]{1}[0-9]{7}$");
         Matcher mather = pattern.matcher(telefono);
  
         if (mather.find() == true) {
             System.out.println("El telefono ingresado es válido.");
         } else {
             System.out.println("El telefono ingresado es inválido.");
-            JOptionPane.showMessageDialog(null,  "Se admite solo números"); 
+            JOptionPane.showMessageDialog(null,  "Se admite solo números y un total de 10 digitos "); 
         }
     }
     
+        public void validarPlaca(String placa)
+        {
+            System.out.println("PLACA INGRESADA?.");
+            Pattern pattern = Pattern.compile("^[A-Z]{3}\\-[0-9]{4}$");
+            Matcher mather = pattern.matcher(placa);
+
+            if (mather.find() == true) {
+                System.out.println("La placa es válido.");
+            } else {
+                System.out.println("La placa es inválido.");
+                JOptionPane.showMessageDialog(null,  "Se admite del segun el formato: PPP-1111 "); 
+            }
+        }
     
     
     

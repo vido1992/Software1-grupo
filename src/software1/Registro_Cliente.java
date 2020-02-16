@@ -5,6 +5,8 @@
  */
 package software1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author David
@@ -30,7 +32,6 @@ public class Registro_Cliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -44,13 +45,10 @@ public class Registro_Cliente extends javax.swing.JFrame {
         ApellidosClienteRegistro = new javax.swing.JTextField();
         NombreClienteRegistro = new javax.swing.JTextField();
         CCCRegistro = new javax.swing.JTextField();
-        jComboRegTipoCli = new javax.swing.JComboBox<String>();
         jLabel8 = new javax.swing.JLabel();
         CorreoElectronico = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("Tipo de cliente");
 
         jLabel2.setText("CI/RUC/Pasaporte");
 
@@ -71,13 +69,6 @@ public class Registro_Cliente extends javax.swing.JFrame {
             }
         });
 
-        jComboRegTipoCli.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Prepago", "Postpago" }));
-        jComboRegTipoCli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboRegTipoCliActionPerformed(evt);
-            }
-        });
-
         jLabel8.setText("Correo Electronico");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -85,43 +76,39 @@ public class Registro_Cliente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jBotonRegistrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(176, 176, 176)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CorreoElectronico)
-                    .addComponent(NombreClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboRegTipoCli, 0, 215, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(TelefonoClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(DireccionClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ApellidosClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CCCRegistro, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(165, 165, 165))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(jBotonRegistrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(176, 176, 176)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CorreoElectronico)
+                            .addComponent(NombreClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(TelefonoClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(DireccionClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ApellidosClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(CCCRegistro, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboRegTipoCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(CCCRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -145,13 +132,13 @@ public class Registro_Cliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(CorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(17, 17, 17)
                 .addComponent(jBotonRegistrar)
-                .addGap(26, 26, 26))
+                .addGap(99, 99, 99))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,38 +146,47 @@ public class Registro_Cliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonRegistrarActionPerformed
-        
-        System.out.println(this.CCCRegistro.getText().toString());
-        validar.validarCC(this.CCCRegistro.getText().toString());
-        validar.validarTex(this.NombreClienteRegistro.getText().toString());
-        validar.validarTex(this.ApellidosClienteRegistro.getText().toString());
-        validar.validarDireccion(this.DireccionClienteRegistro.getText().toString());
-        validar.validarCorreo(this.CorreoElectronico.getText().toString());
-        validar.validarTelefonoC(this.TelefonoClienteRegistro.getText());
+        //{}
+        if(this.CCCRegistro.getText().equals("") || NombreClienteRegistro.getText().equals("") || this.ApellidosClienteRegistro.getText().equals("") ||
+          this.DireccionClienteRegistro.getText().equals("") ||  this.CorreoElectronico.getText().equals("") || this.TelefonoClienteRegistro.equals("") 
+                || this.PlacaClienteRegistro.getText().equals("") )
+        {
+          JOptionPane.showMessageDialog(null,  " No se admite items vacios");   
+            
+        }
+        else 
+        {
+          System.out.println(this.CCCRegistro.getText().toString());
+            validar.validarCC(this.CCCRegistro.getText().toString());
+            validar.validarTex(this.NombreClienteRegistro.getText().toString());
+            validar.validarTex(this.ApellidosClienteRegistro.getText().toString());
+            validar.validarDireccion(this.DireccionClienteRegistro.getText().toString());
+            validar.validarCorreo(this.CorreoElectronico.getText().toString());
+            validar.validarTelefonoC(this.TelefonoClienteRegistro.getText());
+            validar.validarPlaca(this.PlacaClienteRegistro.getText().toString());
+ 
+          
+          }  
         
         
         
     }//GEN-LAST:event_jBotonRegistrarActionPerformed
-
-    private void jComboRegTipoCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboRegTipoCliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboRegTipoCliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,8 +232,6 @@ public class Registro_Cliente extends javax.swing.JFrame {
     private javax.swing.JTextField PlacaClienteRegistro;
     private javax.swing.JTextField TelefonoClienteRegistro;
     private javax.swing.JButton jBotonRegistrar;
-    private javax.swing.JComboBox<String> jComboRegTipoCli;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
