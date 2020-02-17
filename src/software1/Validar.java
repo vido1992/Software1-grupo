@@ -222,21 +222,7 @@ public class Validar {
             
         }
     
-    public boolean validarCantidad(String cantidad)
-    {
-            System.out.println("cantidad ingresada?.");
-            Pattern pattern = Pattern.compile("^[0-9]{1}\\.[0-9]{3}\\,[0-9]{2}$");
-            Matcher mather = pattern.matcher(cantidad);
 
-            if (mather.find() == true) {
-                System.out.println("cantidad válida.");
-                return true;
-            } else {
-                System.out.println("Cantidad no valida");
-                JOptionPane.showMessageDialog(null,  "Constará de una cadena de caracteres numéricos, punto y coma, según el formato “X.XX,XX"); 
-                return false;
-            }
-    }
     
     
     

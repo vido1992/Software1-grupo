@@ -50,7 +50,9 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
@@ -119,8 +121,15 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.add(jMenu6);
 
-        jMenuItem4.setText("Consultar");
-        jMenu5.add(jMenuItem4);
+        jMenu10.setText("Consultar");
+
+        jMenuItem1.setText("CC");
+        jMenu10.add(jMenuItem1);
+
+        jMenuItem8.setText("Placa");
+        jMenu10.add(jMenuItem8);
+
+        jMenu5.add(jMenu10);
 
         jMenuItem5.setText("Actualizar");
         jMenu5.add(jMenuItem5);
@@ -230,6 +239,7 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -240,12 +250,13 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;

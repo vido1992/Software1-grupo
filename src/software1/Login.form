@@ -136,7 +136,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CI/RUC/Pasaporte"/>
+            <Property name="text" type="java.lang.String" value="Cedula de Ciudadan&#xed;a"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">

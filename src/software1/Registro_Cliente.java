@@ -281,7 +281,11 @@ public class Registro_Cliente extends javax.swing.JFrame {
                   this.Placa=this.PlacaClienteRegistro.getText().toString();
                  // System.out.println(this.PlacaClienteRegistro.getText().toString());
               }
-              
+               if(Integer.parseInt(this.CantidadRC.getText().toString())>0 && Integer.parseInt(this.CantidadRC.getText().toString())<100)
+              {i++;
+                  this.Cantidad=this.CantidadRC.getText().toString();
+                 // System.out.println(this.PlacaClienteRegistro.getText().toString());
+              }
               
               
               
@@ -290,7 +294,12 @@ public class Registro_Cliente extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,  "CLIENTE REGISTRADO"); 
                 this.TipoCliente=this.Titulo.getText().toString();
                 this.base.crearArchivo(this.CC,this.TipoCliente,this.Nombre,this.Apellido,this.Direccion,this.Correo,this.TelefonoCelular,this.Placa);
+               }else if(i==8){
+                JOptionPane.showMessageDialog(null,  "CLIENTE REGISTRADO"); 
+                this.TipoCliente=this.Titulo.getText().toString();
+                this.base.prepagoArchivo(this.CC,this.TipoCliente,this.Nombre,this.Apellido,this.Direccion,this.Correo,this.TelefonoCelular,this.Cantidad,this.Placa);
                }
+              
             }  
         
         
