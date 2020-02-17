@@ -5,6 +5,10 @@
  */
 package software1;
 
+import Inventario.Inventario_Consulta;
+import Inventario.Inventario_Registro;
+import Ventas.Venta_Registro;
+import Ventas.Ventas_Consulta;
 import java.awt.event.ActionEvent;
 
 /**
@@ -14,7 +18,13 @@ import java.awt.event.ActionEvent;
 public class Menu extends javax.swing.JFrame {
 Registro_Cliente RC=new Registro_Cliente();
 Consulta_Cliente CC=new Consulta_Cliente();
-    /**
+Inventario_Consulta IC=new Inventario_Consulta();
+Inventario_Registro IR=new Inventario_Registro();
+Venta_Registro VR= new Venta_Registro();
+Ventas_Consulta VC= new Ventas_Consulta();
+
+
+/**
      * Creates new form Menú
      */
     public Menu() {
@@ -53,7 +63,6 @@ Consulta_Cliente CC=new Consulta_Cliente();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
@@ -144,14 +153,6 @@ Consulta_Cliente CC=new Consulta_Cliente();
             }
         });
         jMenu5.add(jMenuItem5);
-
-        jMenuItem6.setText("Eliminar");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem6);
 
         jMenuBar2.add(jMenu5);
 
@@ -305,10 +306,6 @@ Consulta_Cliente CC=new Consulta_Cliente();
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -322,11 +319,20 @@ Consulta_Cliente CC=new Consulta_Cliente();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        // TODO add your handling code here:
+
+        this.setVisible(false);
+                
+        IR.setVisible(true);
+        IR.setEnabled(true);
+        
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
+
+        this.setVisible(false);
+                
+        IC.setVisible(true);
+        IC.setEnabled(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
@@ -334,11 +340,19 @@ Consulta_Cliente CC=new Consulta_Cliente();
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        // TODO add your handling code here:
+
+            this.setVisible(false);
+                
+                VR.setVisible(true);
+                VR.setEnabled(true);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        // TODO add your handling code here:
+                this.setVisible(false);
+                
+                VC.setVisible(true);
+                VC.setEnabled(true);
+        
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
@@ -407,7 +421,6 @@ Consulta_Cliente CC=new Consulta_Cliente();
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
