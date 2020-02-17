@@ -41,7 +41,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
         jLabelConsultaCli.setText("Seleccione el elemento de búsqueda");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CI/RUC/Pasaporte", "Nombres", "Apellidos", "Placa" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CC", "Nombres", "Apellidos", "Placa" }));
 
         jButton2.setText("Buscar");
 
@@ -50,7 +50,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CI/RUC/Pasaporte", "Nombres", "Apellidos", "Dirección", "Teléfono", "Placa"
+                "CC", "Nombres", "Apellidos", "Dirección", "Teléfono", "Placa"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
