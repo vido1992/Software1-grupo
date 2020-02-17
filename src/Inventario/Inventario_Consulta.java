@@ -18,6 +18,8 @@ public class Inventario_Consulta extends javax.swing.JFrame {
      */
     public Inventario_Consulta() {
         initComponents();
+        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE");
+        this.setLocationRelativeTo(null);
     }
 
     /**

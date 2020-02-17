@@ -18,6 +18,8 @@ public class Venta_Registro extends javax.swing.JFrame {
      */
     public Venta_Registro() {
         initComponents();
+        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE");
+        this.setLocationRelativeTo(null);
     }
 
     /**

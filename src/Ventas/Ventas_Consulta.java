@@ -18,6 +18,8 @@ public class Ventas_Consulta extends javax.swing.JFrame {
      */
     public Ventas_Consulta() {
         initComponents();
+        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE");
+        this.setLocationRelativeTo(null);
     }
 
     /**

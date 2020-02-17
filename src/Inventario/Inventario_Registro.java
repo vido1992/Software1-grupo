@@ -18,6 +18,8 @@ public class Inventario_Registro extends javax.swing.JFrame {
      */
     public Inventario_Registro() {
         initComponents();
+        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE");
+        this.setLocationRelativeTo(null);
     }
 
     /**
