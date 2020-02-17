@@ -66,7 +66,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Seleccione tipo de usuario");
 
-        jLabel3.setText("CI/RUC/Pasaporte");
+        jLabel3.setText("Cedula de Ciudadanía");
 
         jLabel4.setText("Contraseña:");
 
@@ -76,6 +76,8 @@ public class Login extends javax.swing.JFrame {
                 jBotonIniciarSesionActionPerformed(evt);
             }
         });
+
+        jContraseñaField.setToolTipText("");
 
         jCCField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

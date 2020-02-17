@@ -28,9 +28,10 @@ public class Registro_Cliente extends javax.swing.JFrame {
     
     this.Titulo.setText(titulo);
     
-    if(titulo=="Estándar"){
+    if(titulo!="Prepago"){
     this.CantidadRC.setVisible(false);
-    this.txtCantidadRC.setVisible(false);
+    this.jComboBox1.setVisible(false);
+    this.logodiner.setVisible(false);
     }
     
     }
@@ -65,7 +66,8 @@ public class Registro_Cliente extends javax.swing.JFrame {
         jButtonRegresar = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
         CantidadRC = new javax.swing.JLabel();
-        txtCantidadRC = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        logodiner = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +104,10 @@ public class Registro_Cliente extends javax.swing.JFrame {
 
         CantidadRC.setText("Cantidad");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "10", "50", "70", "100", "150", "200" }));
+
+        logodiner.setText("$");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -129,12 +135,8 @@ public class Registro_Cliente extends javax.swing.JFrame {
                         .addComponent(jBotonRegistrar)))
                 .addGap(123, 123, 123)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButtonRegresar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtCantidadRC, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CorreoElectronico, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NombreClienteRegistro)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -144,7 +146,15 @@ public class Registro_Cliente extends javax.swing.JFrame {
                             .addComponent(DireccionClienteRegistro)
                             .addComponent(ApellidosClienteRegistro)
                             .addComponent(CCCRegistro))
-                        .addGap(82, 82, 82))))
+                        .addGap(82, 82, 82))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonRegresar)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(logodiner)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +192,8 @@ public class Registro_Cliente extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CantidadRC)
-                    .addComponent(txtCantidadRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logodiner))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBotonRegistrar)
@@ -281,13 +292,25 @@ public class Registro_Cliente extends javax.swing.JFrame {
                   this.Placa=this.PlacaClienteRegistro.getText().toString();
                  // System.out.println(this.PlacaClienteRegistro.getText().toString());
               }
+               if(this.jComboBox1.getSelectedItem().toString()!="0")
+              {i++;
+                  this.Cantidad=this.jComboBox1.getSelectedItem().toString();
+                 // System.out.println(this.PlacaClienteRegistro.getText().toString());
+              }
+              
+              
               
               if(i==7)
                {
                 JOptionPane.showMessageDialog(null,  "CLIENTE REGISTRADO"); 
                 this.TipoCliente=this.Titulo.getText().toString();
                 this.base.crearArchivo(this.CC,this.TipoCliente,this.Nombre,this.Apellido,this.Direccion,this.Correo,this.TelefonoCelular,this.Placa);
+               }else if(i==8){
+                JOptionPane.showMessageDialog(null,  "CLIENTE REGISTRADO"); 
+                this.TipoCliente=this.Titulo.getText().toString();
+                this.base.prepagoArchivo(this.CC,this.TipoCliente,this.Nombre,this.Apellido,this.Direccion,this.Correo,this.TelefonoCelular,this.Cantidad,this.Placa);
                }
+              
             }  
         
         
@@ -349,6 +372,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton jBotonRegistrar;
     private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -357,6 +381,6 @@ public class Registro_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCantidadRC;
+    private javax.swing.JLabel logodiner;
     // End of variables declaration//GEN-END:variables
 }

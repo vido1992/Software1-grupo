@@ -50,7 +50,7 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
@@ -119,8 +119,13 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.add(jMenu6);
 
-        jMenuItem4.setText("Consultar");
-        jMenu5.add(jMenuItem4);
+        jMenuItem8.setText("Consultar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem8);
 
         jMenuItem5.setText("Actualizar");
         jMenu5.add(jMenuItem5);
@@ -189,6 +194,10 @@ Registro_Cliente RC=new Registro_Cliente();
                 RC.titulo(this.jMenuItem3.getText());
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,10 +251,10 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;

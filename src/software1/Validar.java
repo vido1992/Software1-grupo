@@ -152,7 +152,7 @@ public class Validar {
          
         } else {
             System.out.println("Se admite solo MAYÚSCULAS");
-            JOptionPane.showMessageDialog(null,  "Se admite solo MAYÚSCULAS");  
+            JOptionPane.showMessageDialog(null,  "Dirección no cumple con lo permitido, Solo se aceptan letras, tildes, espacios y en mayúsculas");  
             return false;
         }
        
@@ -178,7 +178,7 @@ public class Validar {
             System.out.println("El email ingresado es válido.");
             return true;
         } else {
-            System.out.println("El email ingresado es inválido.");
+            System.out.println("Dirección de correo no cumple con el estándar RFC 822.");
             JOptionPane.showMessageDialog(null,  "Se admite solo minúsculas"); 
             return false;
         }
@@ -216,14 +216,13 @@ public class Validar {
                 return true;
             } else {
                 System.out.println("La placa es inválida.");
-                JOptionPane.showMessageDialog(null,  "Se admite del según el formato: PPP-1111 "); 
+                JOptionPane.showMessageDialog(null,  "placa incorrecta, no cumple con el reglamento de la ANT"); 
                 return false;
             }
             
         }
     
-    
-    
+
     
     
     
