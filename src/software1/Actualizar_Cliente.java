@@ -275,27 +275,6 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CLIENTE ACTUALIZADO");
             this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
         }
-
-        File archivo = new File("Clientes.txt");
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(archivo));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(archivo));
-
-            String currentLine;
-
-            while ((currentLine = reader.readLine()) != null) {
-                if (currentLine.trim().equals(nuevo[0]+"++"+nuevo[1]+"++"+nuevo[2]+"++"+nuevo[3]+"++"+nuevo[4]+"++"+nuevo[5]+"++"+nuevo[6]+"++"+nuevo[7])) {
-                    continue;
-                }
-                writer.write(currentLine + System.getProperty("line.separator"));
-            }
-
-            writer.close();
-            reader.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
