@@ -227,7 +227,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         return null;
     }
 
-    public void removeLineFromFile(String file, String lineToRemove) throws FileNotFoundException, IOException {
+    public void removeLineFromFile(String lineToRemove) throws FileNotFoundException, IOException {
 
         File inputFile = new File("Clientes.txt");
         File tempFile = new File("myTempFile.txt");
@@ -241,9 +241,24 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
             // trim newline when comparing with lineToRemove
             String trimmedLine = currentLine.trim();
             if (trimmedLine.equals(lineToRemove)) {
+                System.out.println(trimmedLine);
                 System.out.println(lineToRemove);
                 continue;
             }
+            writer.write(currentLine + System.getProperty("line.separator"));
+        }
+        writer.close();
+        reader.close();
+        
+        inputFile = new File("myTempFile.txt");
+        tempFile = new File("Clientes.txt");
+
+        reader = new BufferedReader(new FileReader(inputFile));
+        writer = new BufferedWriter(new FileWriter(tempFile));
+
+        while ((currentLine = reader.readLine()) != null) {
+            // trim newline when comparing with lineToRemove
+            String trimmedLine = currentLine.trim();
             writer.write(currentLine + System.getProperty("line.separator"));
         }
         writer.close();
@@ -311,7 +326,8 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
             this.base.crearArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7]);
             try {
-                removeLineFromFile("Clientes.txt", nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++{}");
+                removeLineFromFile( nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++{}");
+                
             } catch (IOException ex) {
                 Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -319,7 +335,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
             this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
             try {
-                removeLineFromFile("Clientes.txt", nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++" + nuevo[8] + "++{}");
+                removeLineFromFile(nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++" + nuevo[8] + "++{}");
             } catch (IOException ex) {
                 Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
             }
