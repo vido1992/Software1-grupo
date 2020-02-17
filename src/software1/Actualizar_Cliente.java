@@ -181,18 +181,34 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField9ActionPerformed
     
     private void buscar(String cedula, String tipoCliente) throws FileNotFoundException, IOException{
+        int contador;
         File archivo = new File ("Clientes.txt");
         FileReader fr = new FileReader (archivo);
         BufferedReader br = new BufferedReader(fr);
         String contenido = br.readLine();
-        StringTokenizer r1 = new StringTokenizer(contenido,"++");
         do{
-            while(r1.hasMoreTokens()){
-                
-            }
+            System.out.println(generarVector(contenido));
+            clientes.add(generarVector(contenido));
         contenido = br.readLine();
-        }while(contenido.equals(""));
+        }while(contenido!=null);
+        contador=0;
+        /*do{
+            clientes.get(contador);
+        }while();*/
     }
+    
+    private String[] generarVector(String contenido){
+        int contador=0;
+        String []datos = new String[9];
+        StringTokenizer r1 = new StringTokenizer(contenido,"++");
+        while(r1.hasMoreTokens()){
+                datos[contador]=r1.nextToken();
+                System.out.println(datos[contador]);
+                contador++;
+            }
+        return datos;
+    }
+    
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         String tipocliente;
