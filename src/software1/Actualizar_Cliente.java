@@ -6,9 +6,11 @@
 package software1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
@@ -22,15 +24,19 @@ import jdk.nashorn.internal.parser.Token;
  * @author David
  */
 public class Actualizar_Cliente extends javax.swing.JFrame {
+
     Validar validar = new Validar();
-    String datos []= new String[9];
+    String datos[] = new String[9];
     LinkedList<String[]> clientes = new LinkedList<>();
+    String nuevo[] = new String[9];
+    Base base = new Base();
+
     /**
      * Creates new form Actualizar_Cliente
      */
     public Actualizar_Cliente() {
         initComponents();
-        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE"); 
+        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE");
         this.setLocationRelativeTo(null);
     }
 
@@ -74,6 +80,11 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         jLabel15.setText("Teléfono");
 
         jButton4.setText("Actualizar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estándar", "Prepago", "Postpago" }));
         jComboBox4.setSelectedIndex(-1);
@@ -179,61 +190,71 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
-    
-    private void buscar(String cedula, String tipoCliente) throws FileNotFoundException, IOException{
+
+    private String[] buscar(String cedula, String tipoCliente) throws FileNotFoundException, IOException {
         int contador;
-        File archivo = new File ("Clientes.txt");
-        FileReader fr = new FileReader (archivo);
+        File archivo = new File("Clientes.txt");
+        FileReader fr = new FileReader(archivo);
         BufferedReader br = new BufferedReader(fr);
         String contenido = br.readLine();
-        do{
-            System.out.println(generarVector(contenido));
+        do {
             clientes.add(generarVector(contenido));
-        contenido = br.readLine();
-        }while(contenido!=null);
-        contador=0;
-        /*do{
-            clientes.get(contador);
-        }while();*/
-    }
-    
-    private String[] generarVector(String contenido){
-        int contador=0;
-        String []datos = new String[9];
-        StringTokenizer r1 = new StringTokenizer(contenido,"++");
-        while(r1.hasMoreTokens()){
-                datos[contador]=r1.nextToken();
-                System.out.println(datos[contador]);
-                contador++;
+            contenido = br.readLine();
+        } while (contenido != null);
+        String[] actual = new String[10];
+        for (int i = 0; i < clientes.size(); i++) {
+            actual = clientes.get(i);
+            System.out.println(actual[0] + " " + actual[1]);
+            if (actual[0].equals(cedula) && actual[1].equals(tipoCliente)) {
+                return actual;
             }
+        }
+        return null;
+    }
+
+    private String[] generarVector(String contenido) {
+        int contador = 0;
+        String[] datos = new String[10];
+        StringTokenizer r1 = new StringTokenizer(contenido, "++");
+        while (r1.hasMoreTokens()) {
+            datos[contador] = r1.nextToken();
+            System.out.println(datos[contador]);
+            contador++;
+        }
         return datos;
     }
-    
-    
+
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         String tipocliente;
-        if(jTextField9.getText().equals("")){
+        if (jTextField9.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Campo obligatorio");
-        }
-        else{
-            if(validar.validarCC(jTextField9.getText())){
-                if(jComboBox4.getSelectedIndex()==-1){
+        } else {
+            if (validar.validarCC(jTextField9.getText())) {
+                if (jComboBox4.getSelectedIndex() == -1) {
                     JOptionPane.showMessageDialog(null, "Seleccione un tipo de cliente");
-                }
-                else{
-                    if(jComboBox4.getSelectedIndex()==0){
+                } else {
+                    if (jComboBox4.getSelectedIndex() == 0) {
                         tipocliente = "Estándar";
-                    }else{
-                        if(jComboBox4.getSelectedIndex()==1){
-                        tipocliente = "Prepago";
-                    }else{
-                        tipocliente = "Pospago";
-                    }
+                    } else {
+                        if (jComboBox4.getSelectedIndex() == 1) {
+                            tipocliente = "Prepago";
+                        } else {
+                            tipocliente = "Pospago";
+                        }
                     }
                     try {
-                        buscar(jTextField9.getText(), tipocliente);
+                        if (buscar(jTextField9.getText(), tipocliente) == null) {
+                            JOptionPane.showMessageDialog(null, "Cliente no registrado");
+                        } else {
+                            nuevo = buscar(jTextField9.getText(), tipocliente);
+                            jTextField10.setText(buscar(jTextField9.getText(), tipocliente)[5]);
+                            jTextField12.setText(buscar(jTextField9.getText(), tipocliente)[4]);
+                            jTextField13.setText(buscar(jTextField9.getText(), tipocliente)[6]);
+                        }
+
                     } catch (IOException ex) {
-                        JOptionPane.showMessageDialog(null,"Cliente no registrado");
+                        JOptionPane.showMessageDialog(null, "Cliente no registrado");
                     }
                 }
             }
@@ -244,6 +265,39 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        if (nuevo[1].equals("Estándar") || nuevo[1].equals("Pospago")) {
+            JOptionPane.showMessageDialog(null, "CLIENTE ACTUALIZADO");
+            this.base.crearArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7]);
+        } else {
+            JOptionPane.showMessageDialog(null, "CLIENTE ACTUALIZADO");
+            this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
+        }
+
+        File archivo = new File("Clientes.txt");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(archivo));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(archivo));
+
+            String currentLine;
+
+            while ((currentLine = reader.readLine()) != null) {
+                if (currentLine.trim().equals(nuevo[0]+"++"+nuevo[1]+"++"+nuevo[2]+"++"+nuevo[3]+"++"+nuevo[4]+"++"+nuevo[5]+"++"+nuevo[6]+"++"+nuevo[7])) {
+                    continue;
+                }
+                writer.write(currentLine + System.getProperty("line.separator"));
+            }
+
+            writer.close();
+            reader.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
