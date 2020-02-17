@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
  */
 public class Registro_Cliente extends javax.swing.JFrame {
  Validar validar= new Validar();
+ Base base=new Base();
  
+ public String CC,Nombre,Apellido,Direccion,Correo, Placa,TelefonoCelular,Cantidad,TipoCliente;
  
  
     public Registro_Cliente() {
@@ -209,6 +211,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonRegistrarActionPerformed
+        int i=0;
         //{}
        /* if(this.CCCRegistro.getText().equals("") || NombreClienteRegistro.getText().equals("") || this.ApellidosClienteRegistro.getText().equals("") ||
           this.DireccionClienteRegistro.getText().equals("") ||  this.CorreoElectronico.getText().equals("") || this.TelefonoClienteRegistro.equals("") 
@@ -226,10 +229,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
                            } else if (this.DireccionClienteRegistro.getText().equals(""))
                            {
                                JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO DIRECCION VACIO", JOptionPane.WARNING_MESSAGE);  
-                           } else if( this.CorreoElectronico.getText().equals(""))
-                               {
-                                   JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO E-MAIL VACIO", JOptionPane.WARNING_MESSAGE);  
-                               }else if( this.TelefonoClienteRegistro.getText().equals(""))
+                           } else if( this.TelefonoClienteRegistro.getText().equals(""))
                                {
                                    JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO TELEFONO CELULAR VACIO", JOptionPane.WARNING_MESSAGE); 
                                }else if(this.PlacaClienteRegistro.getText().equals(""))
@@ -237,16 +237,57 @@ public class Registro_Cliente extends javax.swing.JFrame {
                                        JOptionPane.showMessageDialog(null,  "Campo obligatorio","CAMPO PLACA DEL VEHICULO VACIO", JOptionPane.WARNING_MESSAGE); 
                                    }else 
             {
-              System.out.println(this.CCCRegistro.getText().toString());
-              validar.validarCC(this.CCCRegistro.getText().toString());
-              validar.validarTex(this.NombreClienteRegistro.getText().toString());
-              validar.validarTex(this.ApellidosClienteRegistro.getText().toString());
-              validar.validarDireccion(this.DireccionClienteRegistro.getText().toString());
-              validar.validarCorreo(this.CorreoElectronico.getText().toString());
-              validar.validarTelefonoC(this.TelefonoClienteRegistro.getText());
-              validar.validarPlaca(this.PlacaClienteRegistro.getText().toString());
-
-
+              //System.out.println(this.CCCRegistro.getText().toString());
+              if (validar.validarCC(this.CCCRegistro.getText().toString()))
+                  {
+                      //{}
+                      i++;
+                      this.CC=this.CCCRegistro.getText().toString();
+                      //System.out.println("cc: "+this.CCCRegistro.getText().toString() );
+                  }
+              if(validar.validarTex(this.NombreClienteRegistro.getText().toString()))
+               {
+                   i++;
+               this.Nombre= this.NombreClienteRegistro.getText().toString();
+               //System.out.println(this.NombreClienteRegistro.getText().toString());
+               
+               }
+              
+              if(validar.validarTex(this.ApellidosClienteRegistro.getText().toString()))
+               {
+                   i++;
+                   this.Apellido=this.ApellidosClienteRegistro.getText().toString();
+                   //System.out.println(this.ApellidosClienteRegistro.getText().toString());
+               }
+              
+              if(validar.validarDireccion(this.DireccionClienteRegistro.getText().toString()))
+              {
+                  i++;
+                this.Direccion=this.DireccionClienteRegistro.getText().toString();
+               // System.out.println("aqui "+this.DireccionClienteRegistro.getText().toString());      
+              }
+              if(validar.validarCorreo(this.CorreoElectronico.getText().toString()))
+              {i++;
+                  this.Correo=this.CorreoElectronico.getText().toString();
+                  //System.out.println(this.CorreoElectronico.getText().toString());
+              }
+              if(validar.validarTelefonoC(this.TelefonoClienteRegistro.getText()))
+              {i++;
+                  this.TelefonoCelular=this.TelefonoClienteRegistro.getText();
+                 // System.out.println(this.TelefonoClienteRegistro.getText());
+              }
+              if(validar.validarPlaca(this.PlacaClienteRegistro.getText().toString()))
+              {i++;
+                  this.Placa=this.PlacaClienteRegistro.getText().toString();
+                 // System.out.println(this.PlacaClienteRegistro.getText().toString());
+              }
+              
+              if(i==7)
+               {
+                JOptionPane.showMessageDialog(null,  "CLIENTE REGISTRADO"); 
+                this.TipoCliente=this.Titulo.getText().toString();
+                this.base.crearArchivo(this.CC,this.TipoCliente,this.Nombre,this.Apellido,this.Direccion,this.Correo,this.TelefonoCelular,this.Placa);
+               }
             }  
         
         
