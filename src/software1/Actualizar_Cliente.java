@@ -71,7 +71,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
 
         jLabel14.setText("Dirección");
 
-        jLabel15.setText("Teléfono");
+        jLabel15.setText("Número de teléfono celular");
 
         jButton4.setText("Actualizar");
 
