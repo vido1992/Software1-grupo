@@ -63,11 +63,11 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setText("Bienvenido");
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Sistema de gestión de combustible e inventario y facturación");
+        jLabel1.setText("Sistema de gestión de combustible, inventario y facturación");
 
         jLabel2.setText("Seleccione tipo de usuario");
 
-        jLabel3.setText("Cedula de Ciudadanía");
+        jLabel3.setText("Cédula de Ciudadanía");
 
         jLabel4.setText("Contraseña:");
 

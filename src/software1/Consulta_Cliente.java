@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package software1;
 
 import java.io.BufferedReader;
@@ -11,16 +7,12 @@ import java.io.FileReader;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author David
- */
 public class Consulta_Cliente extends javax.swing.JFrame {
 
     File file = new File("Clientes.txt");
     Validar val = new Validar();
-     Cliente c = new Cliente();
     Cliente cli[] = new Cliente[10];
+    int cont;
 
     public Consulta_Cliente() {
         initComponents();
@@ -39,7 +31,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelConsultaCli = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jText = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -59,7 +51,6 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         txtMon = new java.awt.TextField();
         txtTip = new java.awt.TextField();
         jButton3 = new javax.swing.JButton();
-        jButtonRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +59,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         jLabelConsultaCli.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelConsultaCli.setText("Seleccione el elemento de búsqueda");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cédula de Ciudadanía", "Placa" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula de Ciudadanía", "Placa" }));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Cancelar");
@@ -81,38 +72,34 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Nombres");
 
+        txtNom.setEditable(false);
         txtNom.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtNom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Apellido");
 
+        txtApe.setEditable(false);
         txtApe.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("Dirección");
 
+        txtDir.setEditable(false);
         txtDir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Número de teléfono celular");
 
+        txtTel.setEditable(false);
         txtTel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtTel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelActionPerformed(evt);
-            }
-        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Correo electrónico");
 
+        txtCor.setEditable(false);
         txtCor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
+        txtPla.setEditable(false);
         txtPla.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -124,8 +111,10 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Saldo");
 
+        txtMon.setEditable(false);
         txtMon.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
+        txtTip.setEditable(false);
         txtTip.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -136,17 +125,38 @@ public class Consulta_Cliente extends javax.swing.JFrame {
             }
         });
 
-        jButtonRegresar.setText("Regresar");
-        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRegresarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel11)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtApe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTip, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabelConsultaCli)
@@ -156,61 +166,27 @@ public class Consulta_Cliente extends javax.swing.JFrame {
                 .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(93, 93, 93)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(jLabel11)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jButton2)
-                        .addGap(44, 44, 44)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtApe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTip, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jButtonRegresar)))
-                .addGap(99, 99, 99))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152)
+                .addComponent(jButton2)
+                .addGap(239, 239, 239))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelConsultaCli)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelConsultaCli)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -236,8 +212,8 @@ public class Consulta_Cliente extends javax.swing.JFrame {
                             .addComponent(txtPla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
                         .addComponent(jLabel12))
-                    .addComponent(txtTip, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                    .addComponent(txtTip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel13)
@@ -263,49 +239,32 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomActionPerformed
-
-    }//GEN-LAST:event_txtNomActionPerformed
-
-    private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                this.setVisible(false);
-                  Menu m=new Menu();
-               m.setVisible(true);
-               m.setEnabled(true);
+        this.setVisible(false);
+        Menu m = new Menu();
+        m.setVisible(true);
+        m.setEnabled(true);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         validarNoVacio(jText.getText());
         crearArray();
-        if(jComboBox1.getSelectedIndex()==0){
+        if (jComboBox1.getSelectedIndex() == 0) {
             val.validarCC(jText.getText());
             leer();
-            String b=jText.getText();
+            String b = jText.getText();
             buscar(b);
-        }
-        else{
-            if(jComboBox1.getSelectedIndex()==1){
-            val.validarPlaca(jText.getText());
-            leer();
-            String b=jText.getText();
-            buscarPlaca(b);
+        } else {
+            if (jComboBox1.getSelectedIndex() == 1) {
+                val.validarPlaca(jText.getText());
+                leer();
+                String b = jText.getText();
+                buscarPlaca(b);
             }
-           
-             }  
+
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
-        this.setVisible(false);
-        Menu m=new Menu();
-        m.setVisible(true);
-        m.setEnabled(true);
-
-    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     public void validarNoVacio(String st) {
         if (st.length() == 0) {
@@ -316,7 +275,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     public void leer() {
         try {
             String linea;
-            int cont = 0;
+            cont = 0;
             BufferedReader leerFichero = new BufferedReader(new FileReader(file));
             while ((linea = leerFichero.readLine()) != null) {
 
@@ -348,8 +307,6 @@ public class Consulta_Cliente extends javax.swing.JFrame {
                 String placa = mistokens.nextToken().trim();
                 System.out.println(placa);
 
-                String fin = mistokens.nextToken().trim();
-                System.out.println("fin" + fin);
                 guardar(cont, cc, tipo, nombres, apellidos, direccion, email, telefono, monto, placa);
 
                 cont = cont + 1;
@@ -363,9 +320,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     }
 
     public void guardar(int cont, String cc, String tipo, String nombres, String apellidos, String direccion,
-            String email, String telefono, String monto, String placa) {
-        System.out.println("otra linea guardar");
-         System.out.println(cc);
+        String email, String telefono, String monto, String placa) {
         cli[cont].setCedula(cc);
         cli[cont].setTipo(tipo);
         cli[cont].setNombres(nombres);
@@ -375,7 +330,6 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         cli[cont].setTelefono(telefono);
         cli[cont].setMonto(monto);
         cli[cont].setPlaca(placa);
-         System.out.println(cli[cont].getApellidos());
     }
 
     public void llenarDatos(Cliente c) {
@@ -385,20 +339,19 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         this.txtCor.setText(c.getEmail());
         this.txtTel.setText(c.getTelefono());
         this.txtPla.setText(c.getPlaca());
+        this.txtTip.setText(c.getTipo());
+        this.txtMon.setText(c.getMonto());
     }
 
     public void buscar(String s) {
-          System.out.println("otra linea buscar");
-            System.out.println(s);
-              System.out.println(cli[0]);
-        for (int j = 0; j < cli.length; j++) {
+        for (int j = 0; j < cont; j++) {
             if (cli[j].getCedula().equals(s)) {
                 llenarDatos(cli[j]);
             }
         }
     }
-    
-      public void buscarPlaca(String s) {
+
+    public void buscarPlaca(String s) {
 
         for (int j = 0; j < cli.length; j++) {
             if (cli[j].getPlaca().equals(s)) {
@@ -406,13 +359,12 @@ public class Consulta_Cliente extends javax.swing.JFrame {
             }
         }
     }
-    
-        public void crearArray() {
+
+    public void crearArray() {
         for (int i = 0; i < cli.length; i++) {
-            cli [i]=new Cliente();
-            }
+            cli[i] = new Cliente();
         }
-   
+    }
 
     /**
      * @param args the command line arguments
@@ -452,7 +404,6 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButtonRegresar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

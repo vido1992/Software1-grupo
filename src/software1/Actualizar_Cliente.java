@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -226,6 +227,45 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         return null;
     }
 
+    public void removeLineFromFile(String lineToRemove) throws FileNotFoundException, IOException {
+
+        File inputFile = new File("Clientes.txt");
+        File tempFile = new File("myTempFile.txt");
+
+        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+        String currentLine;
+
+        while ((currentLine = reader.readLine()) != null) {
+            // trim newline when comparing with lineToRemove
+            String trimmedLine = currentLine.trim();
+            if (trimmedLine.equals(lineToRemove)) {
+                System.out.println(trimmedLine);
+                System.out.println(lineToRemove);
+                continue;
+            }
+            writer.write(currentLine + System.getProperty("line.separator"));
+        }
+        writer.close();
+        reader.close();
+
+        inputFile = new File("myTempFile.txt");
+        tempFile = new File("Clientes.txt");
+
+        reader = new BufferedReader(new FileReader(inputFile));
+        writer = new BufferedWriter(new FileWriter(tempFile));
+
+        while ((currentLine = reader.readLine()) != null) {
+            // trim newline when comparing with lineToRemove
+            String trimmedLine = currentLine.trim();
+            writer.write(currentLine + System.getProperty("line.separator"));
+        }
+        writer.close();
+        reader.close();
+
+    }
+
     private String[] generarVector(String contenido) {
         int contador = 0;
         String[] datos = new String[10];
@@ -281,20 +321,57 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int i = 0;
 
-        if (nuevo[1].equals("Estándar") || nuevo[1].equals("Pospago")) {
-            JOptionPane.showMessageDialog(null, "CLIENTE ACTUALIZADO");
-            this.base.crearArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7]);
+        if (jTextField10.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campo obligatorio", "CAMPO CORREO ELECTRÓNICO", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "CLIENTE ACTUALIZADO");
-            this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
+            if (jTextField12.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Campo obligatorio", "CAMPO DIRECCIÓN", JOptionPane.WARNING_MESSAGE);
+            } else {
+                if (jTextField13.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Campo obligatorio", "CAMPO TELÉFONO", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    if (validar.validarCorreo(jTextField10.getText())) {
+                        i++;
+                    }
+                    if (validar.validarDireccion(jTextField12.getText())) {
+                        i++;
+                    }
+                    if (validar.validarTelefonoC(jTextField13.getText())) {
+                        i++;
+                    }
+                    if (i == 3) {
+                        if (nuevo[1].equals("Estándar") || nuevo[1].equals("Pospago")) {
+                            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
+                            this.base.crearArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7]);
+                            try {
+                                removeLineFromFile(nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++{}");
+
+                            } catch (IOException ex) {
+                                Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
+                            this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
+                            try {
+                                removeLineFromFile(nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++" + nuevo[8] + "++{}");
+                            } catch (IOException ex) {
+                                Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+
+                }
+            }
         }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         this.setVisible(false);
-        Menu m=new Menu();
+        Menu m = new Menu();
         m.setVisible(true);
         m.setEnabled(true);
 
