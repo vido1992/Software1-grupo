@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package software1;
 
 import java.io.BufferedReader;
@@ -11,15 +7,12 @@ import java.io.FileReader;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author David
- */
 public class Consulta_Cliente extends javax.swing.JFrame {
 
     File file = new File("Clientes.txt");
     Validar val = new Validar();
-    Cliente cli[] = new Cliente[100];
+    Cliente cli[] = new Cliente[10];
+    int cont;
 
     public Consulta_Cliente() {
         initComponents();
@@ -79,38 +72,34 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Nombres");
 
+        txtNom.setEditable(false);
         txtNom.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtNom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Apellido");
 
+        txtApe.setEditable(false);
         txtApe.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("Dirección");
 
+        txtDir.setEditable(false);
         txtDir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Número de teléfono celular");
 
+        txtTel.setEditable(false);
         txtTel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtTel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelActionPerformed(evt);
-            }
-        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Correo electrónico");
 
+        txtCor.setEditable(false);
         txtCor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
+        txtPla.setEditable(false);
         txtPla.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -122,8 +111,10 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Saldo");
 
+        txtMon.setEditable(false);
         txtMon.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
+        txtTip.setEditable(false);
         txtTip.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -248,24 +239,31 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomActionPerformed
-
-    }//GEN-LAST:event_txtNomActionPerformed
-
-    private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        validarNoVacio(jText.getText());
-        val.validarCC(jText.getText());
-        leer();
-        buscar(jText.getText());
+        this.setVisible(false);
+        Menu m = new Menu();
+        m.setVisible(true);
+        m.setEnabled(true);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        validarNoVacio(jText.getText());
+        crearArray();
+        if (jComboBox1.getSelectedIndex() == 0) {
+            val.validarCC(jText.getText());
+            leer();
+            String b = jText.getText();
+            buscar(b);
+        } else {
+            if (jComboBox1.getSelectedIndex() == 1) {
+                val.validarPlaca(jText.getText());
+                leer();
+                String b = jText.getText();
+                buscarPlaca(b);
+            }
+
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void validarNoVacio(String st) {
@@ -277,7 +275,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     public void leer() {
         try {
             String linea;
-            int cont = 0;
+            cont = 0;
             BufferedReader leerFichero = new BufferedReader(new FileReader(file));
             while ((linea = leerFichero.readLine()) != null) {
 
@@ -309,8 +307,6 @@ public class Consulta_Cliente extends javax.swing.JFrame {
                 String placa = mistokens.nextToken().trim();
                 System.out.println(placa);
 
-                String fin = mistokens.nextToken().trim();
-                System.out.println("fin" + fin);
                 guardar(cont, cc, tipo, nombres, apellidos, direccion, email, telefono, monto, placa);
 
                 cont = cont + 1;
@@ -324,8 +320,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     }
 
     public void guardar(int cont, String cc, String tipo, String nombres, String apellidos, String direccion,
-            String email, String telefono, String monto, String placa) {
-        System.out.println("otra linea");
+        String email, String telefono, String monto, String placa) {
         cli[cont].setCedula(cc);
         cli[cont].setTipo(tipo);
         cli[cont].setNombres(nombres);
@@ -344,13 +339,30 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         this.txtCor.setText(c.getEmail());
         this.txtTel.setText(c.getTelefono());
         this.txtPla.setText(c.getPlaca());
+        this.txtTip.setText(c.getTipo());
+        this.txtMon.setText(c.getMonto());
     }
 
     public void buscar(String s) {
-        for (int i = 0; i <= cli.length; i++) {
-            if (cli[i].getCedula().equals(s)) {
-                llenarDatos(cli[i]);
+        for (int j = 0; j < cont; j++) {
+            if (cli[j].getCedula().equals(s)) {
+                llenarDatos(cli[j]);
             }
+        }
+    }
+
+    public void buscarPlaca(String s) {
+
+        for (int j = 0; j < cli.length; j++) {
+            if (cli[j].getPlaca().equals(s)) {
+                llenarDatos(cli[j]);
+            }
+        }
+    }
+
+    public void crearArray() {
+        for (int i = 0; i < cli.length; i++) {
+            cli[i] = new Cliente();
         }
     }
 

@@ -5,7 +5,12 @@
  */
 package software1;
 
+import Inventario.Inventario_Consulta;
+import Inventario.Inventario_Registro;
+import Ventas.Venta_Registro;
+import Ventas.Ventas_Consulta;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,7 +18,14 @@ import java.awt.event.ActionEvent;
  */
 public class Menu extends javax.swing.JFrame {
 Registro_Cliente RC=new Registro_Cliente();
-    /**
+Consulta_Cliente CC=new Consulta_Cliente();
+Inventario_Consulta IC=new Inventario_Consulta();
+Inventario_Registro IR=new Inventario_Registro();
+Venta_Registro VR= new Venta_Registro();
+Ventas_Consulta VC= new Ventas_Consulta();
+
+
+/**
      * Creates new form Menú
      */
     public Menu() {
@@ -53,8 +65,14 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -87,6 +105,11 @@ Registro_Cliente RC=new Registro_Cliente();
         menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jMenu5.setText("Cliente");
 
@@ -137,12 +160,63 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenuBar2.add(jMenu5);
 
         jMenu7.setText("Ventas y facturación");
+
+        jMenuItem15.setText("Registrar");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem15);
+
+        jMenuItem16.setText("Consultar");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem16);
+
         jMenuBar2.add(jMenu7);
 
         jMenu8.setText("Inventario");
+
+        jMenuItem12.setText("Registrar");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem12);
+
+        jMenuItem13.setText("Consultar");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem13);
+
         jMenuBar2.add(jMenu8);
 
         jMenu9.setText("Empleado");
+
+        jMenuItem9.setText("Registrar");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem9);
+
+        jMenuItem10.setText("Consultar");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem10);
+
         jMenuBar2.add(jMenu9);
 
         setJMenuBar(jMenuBar2);
@@ -196,14 +270,67 @@ Registro_Cliente RC=new Registro_Cliente();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // TODO add your handling code here:
+                this.setVisible(false);
+                
+                CC.setVisible(true);
+                CC.setEnabled(true);
+               
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         Actualizar_Cliente a1 = new Actualizar_Cliente();
         a1.setVisible(true);
+         this.setVisible(false);
+                a1.setEnabled(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+
+        this.setVisible(false);
+                
+        IR.setVisible(true);
+        IR.setEnabled(true);
+        
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+
+        this.setVisible(false);
+                
+        IC.setVisible(true);
+        IC.setEnabled(true);
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+
+            this.setVisible(false);
+                
+                VR.setVisible(true);
+                VR.setEnabled(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+                this.setVisible(false);
+                
+                VC.setVisible(true);
+                VC.setEnabled(true);
+        
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+
+         if(JOptionPane.showConfirmDialog(null,"¿Está seguro?")==0){
+            System.exit(0);}
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -256,11 +383,17 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
