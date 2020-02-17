@@ -50,7 +50,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CI/RUC/Pasaporte", "Nombres", "Apellidos", "Dirección", "Teléfono", "Placa"
+                "CC", "Nombres", "Apellidos", "Dirección", "Teléfono", "Placa"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

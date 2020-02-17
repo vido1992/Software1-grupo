@@ -20,7 +20,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
  
     public Registro_Cliente() {
         initComponents();
-        this.setTitle("Registrar cliente estándar"); 
+        this.setTitle("Registrar cliente");
         this.setLocationRelativeTo(null);
     }
 
