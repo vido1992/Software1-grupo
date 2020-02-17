@@ -59,9 +59,10 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<String>();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButtonRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,7 +78,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
 
         jLabel14.setText("Dirección");
 
-        jLabel15.setText("Número de teléfono celular");
+        jLabel15.setText("Teléfono");
 
         jButton4.setText("Actualizar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +87,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
             }
         });
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estándar", "Prepago", "Postpago" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Estándar", "Prepago", "Postpago" }));
         jComboBox4.setSelectedIndex(-1);
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +103,13 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Número de cédula de ciudadanía: ");
+
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelActualizarCliLayout = new javax.swing.GroupLayout(jPanelActualizarCli);
         jPanelActualizarCli.setLayout(jPanelActualizarCliLayout);
@@ -131,9 +139,13 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
                                     .addComponent(jTextField12)
                                     .addComponent(jTextField13)))))
                     .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
-                        .addGap(268, 268, 268)
+                        .addGap(166, 166, 166)
+                        .addComponent(jButton4)
+                        .addGap(13, 13, 13)
                         .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
+                            .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jButtonRegresar))
                             .addComponent(jButton5))))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
@@ -163,7 +175,9 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButtonRegresar))
                 .addGap(90, 90, 90))
         );
 
@@ -278,6 +292,14 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        this.setVisible(false);
+        Menu m=new Menu();
+        m.setVisible(true);
+        m.setEnabled(true);
+
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -316,6 +338,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonRegresar;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

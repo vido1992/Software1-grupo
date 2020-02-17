@@ -10,6 +10,7 @@ import Inventario.Inventario_Registro;
 import Ventas.Venta_Registro;
 import Ventas.Ventas_Consulta;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -104,6 +105,11 @@ Ventas_Consulta VC= new Ventas_Consulta();
         menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jMenu5.setText("Cliente");
 
@@ -319,6 +325,12 @@ Ventas_Consulta VC= new Ventas_Consulta();
                 VC.setEnabled(true);
         
     }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+
+         if(JOptionPane.showConfirmDialog(null,"¿Está seguro?")==0){
+            System.exit(0);}
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
