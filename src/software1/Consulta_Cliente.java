@@ -19,7 +19,8 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
     File file = new File("Clientes.txt");
     Validar val = new Validar();
-    Cliente cli[] = new Cliente[100];
+     Cliente c = new Cliente();
+    Cliente cli[] = new Cliente[10];
 
     public Consulta_Cliente() {
         initComponents();
@@ -257,15 +258,31 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        validarNoVacio(jText.getText());
-        val.validarCC(jText.getText());
-        leer();
-        buscar(jText.getText());
+                this.setVisible(false);
+                  Menu m=new Menu();
+               m.setVisible(true);
+               m.setEnabled(true);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        validarNoVacio(jText.getText());
+        crearArray();
+        if(jComboBox1.getSelectedIndex()==0){
+            val.validarCC(jText.getText());
+            leer();
+            String b=jText.getText();
+            buscar(b);
+        }
+        else{
+            if(jComboBox1.getSelectedIndex()==1){
+            val.validarPlaca(jText.getText());
+            leer();
+            String b=jText.getText();
+            buscarPlaca(b);
+            }
+           
+             }  
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void validarNoVacio(String st) {
@@ -325,7 +342,8 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
     public void guardar(int cont, String cc, String tipo, String nombres, String apellidos, String direccion,
             String email, String telefono, String monto, String placa) {
-        System.out.println("otra linea");
+        System.out.println("otra linea guardar");
+         System.out.println(cc);
         cli[cont].setCedula(cc);
         cli[cont].setTipo(tipo);
         cli[cont].setNombres(nombres);
@@ -335,6 +353,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
         cli[cont].setTelefono(telefono);
         cli[cont].setMonto(monto);
         cli[cont].setPlaca(placa);
+         System.out.println(cli[cont].getApellidos());
     }
 
     public void llenarDatos(Cliente c) {
@@ -347,12 +366,31 @@ public class Consulta_Cliente extends javax.swing.JFrame {
     }
 
     public void buscar(String s) {
-        for (int i = 0; i <= cli.length; i++) {
-            if (cli[i].getCedula().equals(s)) {
-                llenarDatos(cli[i]);
+          System.out.println("otra linea buscar");
+            System.out.println(s);
+              System.out.println(cli[0]);
+        for (int j = 0; j < cli.length; j++) {
+            if (cli[j].getCedula().equals(s)) {
+                llenarDatos(cli[j]);
             }
         }
     }
+    
+      public void buscarPlaca(String s) {
+
+        for (int j = 0; j < cli.length; j++) {
+            if (cli[j].getPlaca().equals(s)) {
+                llenarDatos(cli[j]);
+            }
+        }
+    }
+    
+        public void crearArray() {
+        for (int i = 0; i < cli.length; i++) {
+            cli [i]=new Cliente();
+            }
+        }
+   
 
     /**
      * @param args the command line arguments
