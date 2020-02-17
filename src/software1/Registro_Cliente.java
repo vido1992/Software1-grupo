@@ -28,7 +28,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
     
     this.Titulo.setText(titulo);
     
-    if(titulo=="Estándar"){
+    if(titulo!="Prepago"){
     this.CantidadRC.setVisible(false);
     this.txtCantidadRC.setVisible(false);
     }
@@ -281,6 +281,9 @@ public class Registro_Cliente extends javax.swing.JFrame {
                   this.Placa=this.PlacaClienteRegistro.getText().toString();
                  // System.out.println(this.PlacaClienteRegistro.getText().toString());
               }
+              
+              
+              
               
               if(i==7)
                {

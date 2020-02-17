@@ -152,7 +152,7 @@ public class Validar {
          
         } else {
             System.out.println("Se admite solo MAYÚSCULAS");
-            JOptionPane.showMessageDialog(null,  "Se admite solo MAYÚSCULAS");  
+            JOptionPane.showMessageDialog(null,  "Dirección no cumple con lo permitido, Solo se aceptan letras, tildes, espacios y en mayúsculas");  
             return false;
         }
        
@@ -178,7 +178,7 @@ public class Validar {
             System.out.println("El email ingresado es válido.");
             return true;
         } else {
-            System.out.println("El email ingresado es inválido.");
+            System.out.println("Dirección de correo no cumple con el estándar RFC 822.");
             JOptionPane.showMessageDialog(null,  "Se admite solo minúsculas"); 
             return false;
         }
@@ -216,14 +216,27 @@ public class Validar {
                 return true;
             } else {
                 System.out.println("La placa es inválida.");
-                JOptionPane.showMessageDialog(null,  "Se admite del según el formato: PPP-1111 "); 
+                JOptionPane.showMessageDialog(null,  "placa incorrecta, no cumple con el reglamento de la ANT"); 
                 return false;
             }
             
         }
     
-    
-    
+    public boolean validarCantidad(String cantidad)
+    {
+            System.out.println("cantidad ingresada?.");
+            Pattern pattern = Pattern.compile("^[0-9]{1}\\.[0-9]{3}\\,[0-9]{2}$");
+            Matcher mather = pattern.matcher(cantidad);
+
+            if (mather.find() == true) {
+                System.out.println("cantidad válida.");
+                return true;
+            } else {
+                System.out.println("Cantidad no valida");
+                JOptionPane.showMessageDialog(null,  "Constará de una cadena de caracteres numéricos, punto y coma, según el formato “X.XX,XX"); 
+                return false;
+            }
+    }
     
     
     

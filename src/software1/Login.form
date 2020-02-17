@@ -153,6 +153,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jContrase&#xf1;aField">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jCCField">
           <Events>
