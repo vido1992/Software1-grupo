@@ -91,7 +91,7 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.setText("Cliente");
 
-        jMenu6.setText("Registrar cliente");
+        jMenu6.setText("Registrar Cliente");
 
         jMenuItem7.setText("Estándar");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -102,20 +102,30 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenu6.add(jMenuItem7);
 
         jMenuItem2.setText("Prepago");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem2);
 
         jMenuItem3.setText("Pospago");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem3);
 
         jMenu5.add(jMenu6);
 
-        jMenuItem4.setText("Consultar cliente");
+        jMenuItem4.setText("Consultar");
         jMenu5.add(jMenuItem4);
 
-        jMenuItem5.setText("Actualizar cliente");
+        jMenuItem5.setText("Actualizar");
         jMenu5.add(jMenuItem5);
 
-        jMenuItem6.setText("Eliminar cliente");
+        jMenuItem6.setText("Eliminar");
         jMenu5.add(jMenuItem6);
 
         jMenuBar2.add(jMenu5);
@@ -158,7 +168,26 @@ Registro_Cliente RC=new Registro_Cliente();
                 
                 RC.setVisible(true);
                 RC.setEnabled(true);
+                RC.titulo(this.jMenuItem7.getText());
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+            this.setVisible(false);
+                
+                RC.setVisible(true);
+                RC.setEnabled(true);
+                RC.titulo(this.jMenuItem2.getText());
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+
+            this.setVisible(false);
+                
+                RC.setVisible(true);
+                RC.setEnabled(true);
+                RC.titulo(this.jMenuItem3.getText());
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments

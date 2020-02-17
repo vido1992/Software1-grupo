@@ -22,6 +22,19 @@ public class Registro_Cliente extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public void titulo(String titulo){
+    
+    this.Titulo.setText(titulo);
+    
+    if(titulo=="Estándar"){
+    this.CantidadRC.setVisible(false);
+    this.txtCantidadRC.setVisible(false);
+    }
+    
+    }
+            
+  
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +61,9 @@ public class Registro_Cliente extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         CorreoElectronico = new javax.swing.JTextField();
         jButtonRegresar = new javax.swing.JButton();
+        Titulo = new javax.swing.JLabel();
+        CantidadRC = new javax.swing.JLabel();
+        txtCantidadRC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,20 +95,23 @@ public class Registro_Cliente extends javax.swing.JFrame {
             }
         });
 
+        Titulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Titulo.setText("TITULO");
+
+        CantidadRC.setText("Cantidad");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(267, 267, 267)
+                .addComponent(Titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jBotonRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonRegresar)
-                        .addGap(106, 106, 106))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel2)
@@ -101,24 +120,36 @@ public class Registro_Cliente extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(176, 176, 176)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CorreoElectronico)
-                            .addComponent(NombreClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addComponent(CantidadRC)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jBotonRegistrar)))
+                .addGap(123, 123, 123)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButtonRegresar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtCantidadRC, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CorreoElectronico, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NombreClienteRegistro)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 45, Short.MAX_VALUE)
                                 .addComponent(TelefonoClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(DireccionClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ApellidosClienteRegistro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CCCRegistro, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(94, 94, 94))
+                            .addComponent(PlacaClienteRegistro)
+                            .addComponent(DireccionClienteRegistro)
+                            .addComponent(ApellidosClienteRegistro)
+                            .addComponent(CCCRegistro))
+                        .addGap(82, 82, 82))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap()
+                .addComponent(Titulo)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(CCCRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -142,15 +173,19 @@ public class Registro_Cliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(CorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PlacaClienteRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(17, 17, 17)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CantidadRC)
+                    .addComponent(txtCantidadRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBotonRegistrar)
                     .addComponent(jButtonRegresar))
-                .addGap(99, 99, 99))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,15 +194,15 @@ public class Registro_Cliente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -264,11 +299,13 @@ public class Registro_Cliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidosClienteRegistro;
     private javax.swing.JTextField CCCRegistro;
+    private javax.swing.JLabel CantidadRC;
     private javax.swing.JTextField CorreoElectronico;
     private javax.swing.JTextField DireccionClienteRegistro;
     private javax.swing.JTextField NombreClienteRegistro;
     private javax.swing.JTextField PlacaClienteRegistro;
     private javax.swing.JTextField TelefonoClienteRegistro;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JButton jBotonRegistrar;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JLabel jLabel2;
@@ -279,5 +316,6 @@ public class Registro_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCantidadRC;
     // End of variables declaration//GEN-END:variables
 }
