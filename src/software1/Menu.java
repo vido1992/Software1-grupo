@@ -52,7 +52,6 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
@@ -134,9 +133,6 @@ Registro_Cliente RC=new Registro_Cliente();
             }
         });
         jMenu5.add(jMenuItem5);
-
-        jMenuItem6.setText("Eliminar");
-        jMenu5.add(jMenuItem6);
 
         jMenuBar2.add(jMenu5);
 
@@ -263,7 +259,6 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
