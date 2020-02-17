@@ -70,7 +70,7 @@ public class Validar {
         if (!cedulaCorrecta) {
 
         System.out.println("Número de ciudadanía incorrecto");
-        JOptionPane.showMessageDialog(null,  "Número de ciudadanía incorrecto","CAMPO CC INCORRECTO", JOptionPane.WARNING_MESSAGE);  
+        JOptionPane.showMessageDialog(null,  "Número de cédula de ciudadanía incorrecto","CAMPO CC INCORRECTO", JOptionPane.WARNING_MESSAGE);  
 
         }
         return cedulaCorrecta;
