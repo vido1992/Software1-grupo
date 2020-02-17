@@ -5,7 +5,11 @@
  */
 package software1;
 
+import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
+
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -228,7 +232,12 @@ public class Login extends javax.swing.JFrame {
 
         switch (index) {
             case 1:
-                if(pass.equals(PASS_ADMIN)&&CI.equals(CI_ADMIN)){
+                if(CI.isEmpty() || pass.isEmpty()) {
+                    setLblError(Color.TOMATO, "Ingrese las dos credenciales");
+                    status = "Empty";
+                    //empty++;
+                    System.out.println(empty);
+                }else if(pass.equals(PASS_ADMIN)&&CI.equals(CI_ADMIN)){
                 this.setVisible(false);
                 
                 m1.setVisible(true);
@@ -272,6 +281,19 @@ public class Login extends javax.swing.JFrame {
 
         return retorno;
     }
+
+    private void setLblError(Color color, String text) {
+        lblErrors.setBackground(java.awt.Color.RED);
+        lblErrors.setText(text);
+        System.out.println(text);
+    }
+
+    void desaparece(KeyEvent event){
+        if(empty>0){
+            setLblError(Color.TOMATO, "");
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -320,4 +342,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblErrors;
     // End of variables declaration//GEN-END:variables
+    String status;
+    int empty;
 }
