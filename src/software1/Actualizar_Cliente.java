@@ -5,7 +5,17 @@
  */
 package software1;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import jdk.nashorn.internal.parser.Token;
 
 /**
  *
@@ -13,6 +23,8 @@ import javax.swing.JOptionPane;
  */
 public class Actualizar_Cliente extends javax.swing.JFrame {
     Validar validar = new Validar();
+    String datos []= new String[9];
+    LinkedList<String[]> clientes = new LinkedList<>();
     /**
      * Creates new form Actualizar_Cliente
      */
@@ -35,15 +47,11 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jComboBox4 = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
@@ -59,15 +67,11 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
 
         jLabel10.setText("Tipo de cliente");
 
-        jLabel12.setText("Apellidos");
-
-        jLabel13.setText("Nombres");
+        jLabel13.setText("Correo electrónico");
 
         jLabel14.setText("Dirección");
 
         jLabel15.setText("Teléfono");
-
-        jLabel16.setText("Placa");
 
         jButton4.setText("Actualizar");
 
@@ -94,39 +98,32 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
             jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
                 .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelActualizarCliLayout.createSequentialGroup()
-                            .addGap(269, 269, 269)
-                            .addComponent(jButton4)
-                            .addGap(118, 118, 118))
-                        .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
-                            .addGap(103, 103, 103)
-                            .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
-                                    .addComponent(jLabel10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextField9))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelActualizarCliLayout.createSequentialGroup()
-                                    .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel12)
-                                        .addComponent(jLabel14)
-                                        .addComponent(jLabel15)
-                                        .addComponent(jLabel16)
-                                        .addComponent(jLabel13))
-                                    .addGap(93, 93, 93)
-                                    .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField11)
-                                        .addComponent(jTextField10)
-                                        .addComponent(jTextField12)
-                                        .addComponent(jTextField13)
-                                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField9))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelActualizarCliLayout.createSequentialGroup()
+                                .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel13))
+                                .addGap(93, 93, 93)
+                                .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                                    .addComponent(jTextField12)
+                                    .addComponent(jTextField13)))))
                     .addGroup(jPanelActualizarCliLayout.createSequentialGroup()
                         .addGap(268, 268, 268)
-                        .addComponent(jButton5)))
+                        .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4)
+                            .addComponent(jButton5))))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanelActualizarCliLayout.setVerticalGroup(
@@ -148,23 +145,15 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelActualizarCliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(jButton4)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(90, 90, 90))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,8 +179,23 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
-
+    
+    private void buscar(String cedula, String tipoCliente) throws FileNotFoundException, IOException{
+        File archivo = new File ("Clientes.txt");
+        FileReader fr = new FileReader (archivo);
+        BufferedReader br = new BufferedReader(fr);
+        String contenido = br.readLine();
+        StringTokenizer r1 = new StringTokenizer(contenido,"++");
+        do{
+            while(r1.hasMoreTokens()){
+                
+            }
+        contenido = br.readLine();
+        }while(contenido.equals(""));
+    }
+    
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        String tipocliente;
         if(jTextField9.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Campo obligatorio");
         }
@@ -200,9 +204,22 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
                 if(jComboBox4.getSelectedIndex()==-1){
                     JOptionPane.showMessageDialog(null, "Seleccione un tipo de cliente");
                 }
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Cédula incorrecta");
+                else{
+                    if(jComboBox4.getSelectedIndex()==0){
+                        tipocliente = "Estándar";
+                    }else{
+                        if(jComboBox4.getSelectedIndex()==1){
+                        tipocliente = "Prepago";
+                    }else{
+                        tipocliente = "Pospago";
+                    }
+                    }
+                    try {
+                        buscar(jTextField9.getText(), tipocliente);
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(null,"Cliente no registrado");
+                    }
+                }
             }
         }
         // TODO add your handling code here:
@@ -253,17 +270,13 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JPanel jPanelActualizarCli;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
