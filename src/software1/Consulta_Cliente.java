@@ -16,7 +16,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
      */
     public Consulta_Cliente() {
         initComponents();
-        this.setTitle("SiGCIF-PRIMAX"); 
+        this.setTitle("Consultar cliente"); 
         this.setLocationRelativeTo(null);
     }
 
@@ -31,7 +31,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelConsultaCli = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jTextField8 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -41,7 +41,7 @@ public class Consulta_Cliente extends javax.swing.JFrame {
 
         jLabelConsultaCli.setText("Seleccione el elemento de búsqueda");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CI/RUC/Pasaporte", "Nombres", "Apellidos", "Placa" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula de Ciudadanía", "Placa" }));
 
         jButton2.setText("Buscar");
 
