@@ -249,7 +249,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
         }
         writer.close();
         reader.close();
-        
+
         inputFile = new File("myTempFile.txt");
         tempFile = new File("Clientes.txt");
 
@@ -321,23 +321,48 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int i = 0;
 
-        if (nuevo[1].equals("Estándar") || nuevo[1].equals("Pospago")) {
-            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
-            this.base.crearArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7]);
-            try {
-                removeLineFromFile( nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++{}");
-                
-            } catch (IOException ex) {
-                Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        if (jTextField10.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campo obligatorio", "CAMPO CORREO ELECTRÓNICO", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
-            this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
-            try {
-                removeLineFromFile(nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++" + nuevo[8] + "++{}");
-            } catch (IOException ex) {
-                Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            if (jTextField12.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Campo obligatorio", "CAMPO DIRECCIÓN", JOptionPane.WARNING_MESSAGE);
+            } else {
+                if (jTextField13.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Campo obligatorio", "CAMPO TELÉFONO", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    if (validar.validarCorreo(jTextField10.getText())) {
+                        i++;
+                    }
+                    if (validar.validarDireccion(jTextField12.getText())) {
+                        i++;
+                    }
+                    if (validar.validarTelefonoC(jTextField13.getText())) {
+                        i++;
+                    }
+                    if (i == 3) {
+                        if (nuevo[1].equals("Estándar") || nuevo[1].equals("Pospago")) {
+                            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
+                            this.base.crearArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7]);
+                            try {
+                                removeLineFromFile(nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++{}");
+
+                            } catch (IOException ex) {
+                                Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "EL DATO INGRESADO HA SIDO ACTUALIZADO");
+                            this.base.prepagoArchivo(nuevo[0], nuevo[1], nuevo[2], nuevo[3], jTextField12.getText(), jTextField10.getText(), jTextField13.getText(), nuevo[7], nuevo[8]);
+                            try {
+                                removeLineFromFile(nuevo[0] + "++" + nuevo[1] + "++" + nuevo[2] + "++" + nuevo[3] + "++" + nuevo[4] + "++" + nuevo[5] + "++" + nuevo[6] + "++" + nuevo[7] + "++" + nuevo[8] + "++{}");
+                            } catch (IOException ex) {
+                                Logger.getLogger(Actualizar_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+
+                }
             }
         }
 
@@ -346,7 +371,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         this.setVisible(false);
-        Menu m=new Menu();
+        Menu m = new Menu();
         m.setVisible(true);
         m.setEnabled(true);
 
