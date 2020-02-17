@@ -5,6 +5,8 @@
  */
 package Ventas;
 
+import software1.Menu;
+
 /**
  *
  * @author David
@@ -37,6 +39,7 @@ public class Ventas_Consulta extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
+        jButtonRegresar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +71,13 @@ public class Ventas_Consulta extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable6);
 
+        jButtonRegresar2.setText("Regresar");
+        jButtonRegresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -76,7 +86,9 @@ public class Ventas_Consulta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(249, 249, 249)
-                        .addComponent(jBotonIniciarSesion1))
+                        .addComponent(jBotonIniciarSesion1)
+                        .addGap(69, 69, 69)
+                        .addComponent(jButtonRegresar2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -100,7 +112,9 @@ public class Ventas_Consulta extends javax.swing.JFrame {
                     .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jBotonIniciarSesion1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBotonIniciarSesion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRegresar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
@@ -129,6 +143,13 @@ public class Ventas_Consulta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRegresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresar2ActionPerformed
+        this.setVisible(false);
+        Menu m=new Menu();
+        m.setVisible(true);
+        m.setEnabled(true);
+    }//GEN-LAST:event_jButtonRegresar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +188,7 @@ public class Ventas_Consulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBotonIniciarSesion1;
+    private javax.swing.JButton jButtonRegresar2;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel43;
