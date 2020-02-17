@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class Validar {
 
+    
+    
     public Validar() {
     }
     
@@ -78,7 +80,7 @@ public class Validar {
      
      
      
-    public void validarCC (String cedula)
+    public boolean validarCC (String cedula)
     {
         int cantidad=cedula.length();
         if(cantidad==10)
@@ -88,14 +90,20 @@ public class Validar {
 
                
                 System.out.println( "Cédula Correcta");  
-
+                return true;
             }
-        }  else  this.validadorDeCedula(cedula);
+        }  
+        else
+        {  
+            this.validadorDeCedula(cedula);
+            
+        }
+        return false;
     }//fin validarCC
      
     
     
-    public  void validarTex(String caracter) {
+    public  boolean validarTex(String caracter) {
     
         //System.out.println("Por favor ingrese solo letras");
         
@@ -116,6 +124,7 @@ public class Validar {
             if (caracter.matches("^[A-ZÑÁÉÍÓÚ ]*$")) {
             System.out.println("Informacion valida");
             System.out.println(caracter); 
+            return true;
         } else {
 
             JOptionPane.showMessageDialog(null,  "Solo se aceptan letras, tildes y espacios, con un límite de 50 caracteres además de ser en mayúsculas"
@@ -125,25 +134,28 @@ public class Validar {
             System.out.println("debe ingresar dos nombre o dos apellidos"+contador);
 
             JOptionPane.showMessageDialog(null,  "Se admite solo MAYÚSCULAS");  
-           
+           //return false;
 
         }
+        return false;
     }//fin validar texto
 
      
-    public  void validarDireccion(String caracter) {
+    public  boolean validarDireccion(String caracter) {
     
         System.out.println("Por favor ingrese solo letras");
         
         if (caracter.matches("^[A-Z0-9-\\ ]*$")) {
             System.out.println("Información válida");
             System.out.println(caracter);
+            return true;
          
         } else {
             System.out.println("Se admite solo MAYÚSCULAS");
             JOptionPane.showMessageDialog(null,  "Se admite solo MAYÚSCULAS");  
-           
+            return false;
         }
+       
     }//fin validar direccion
     
     
@@ -151,7 +163,7 @@ public class Validar {
     
     
     
-    public void validarCorreo(String email)
+    public boolean validarCorreo(String email)
     {
  
         // Patrón para validar el email
@@ -164,15 +176,18 @@ public class Validar {
  
         if (mather.find() == true) {
             System.out.println("El email ingresado es válido.");
+            return true;
         } else {
             System.out.println("El email ingresado es inválido.");
             JOptionPane.showMessageDialog(null,  "Se admite solo minúsculas"); 
+            return false;
         }
+        
     }
     
     
     
-    public void validarTelefonoC(String telefono)
+    public boolean validarTelefonoC(String telefono)
     {
  
         System.out.println("El teléfono ingresado?.");
@@ -181,13 +196,16 @@ public class Validar {
  
         if (mather.find() == true) {
             System.out.println("El teléfono ingresado es válido.");
+            return true;
         } else {
             System.out.println("El teléfono ingresado es inválido.");
             JOptionPane.showMessageDialog(null,  "Se admite solo números y un total de 10 dígitos "); 
+            return false;
         }
+        
     }
     
-        public void validarPlaca(String placa)
+        public boolean validarPlaca(String placa)
         {
             System.out.println("PLACA INGRESADA?.");
             Pattern pattern = Pattern.compile("^[A-Z]{3}\\-[0-9]{4}$");
@@ -195,10 +213,13 @@ public class Validar {
 
             if (mather.find() == true) {
                 System.out.println("La placa es válida.");
+                return true;
             } else {
                 System.out.println("La placa es inválida.");
                 JOptionPane.showMessageDialog(null,  "Se admite del según el formato: PPP-1111 "); 
+                return false;
             }
+            
         }
     
     
