@@ -281,7 +281,7 @@ public class Registro_Cliente extends javax.swing.JFrame {
                   this.Placa=this.PlacaClienteRegistro.getText().toString();
                  // System.out.println(this.PlacaClienteRegistro.getText().toString());
               }
-               if(Integer.parseInt(this.CantidadRC.getText().toString())>0 && Integer.parseInt(this.CantidadRC.getText().toString())<100)
+               if(Integer.parseInt(this.CantidadRC.getText())>0 && Integer.parseInt(this.CantidadRC.getText())<=100)
               {i++;
                   this.Cantidad=this.CantidadRC.getText().toString();
                  // System.out.println(this.PlacaClienteRegistro.getText().toString());

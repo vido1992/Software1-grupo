@@ -50,8 +50,6 @@ Registro_Cliente RC=new Registro_Cliente();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu10 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -121,15 +119,13 @@ Registro_Cliente RC=new Registro_Cliente();
 
         jMenu5.add(jMenu6);
 
-        jMenu10.setText("Consultar");
-
-        jMenuItem1.setText("CC");
-        jMenu10.add(jMenuItem1);
-
-        jMenuItem8.setText("Placa");
-        jMenu10.add(jMenuItem8);
-
-        jMenu5.add(jMenu10);
+        jMenuItem8.setText("Consultar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem8);
 
         jMenuItem5.setText("Actualizar");
         jMenu5.add(jMenuItem5);
@@ -198,6 +194,10 @@ Registro_Cliente RC=new Registro_Cliente();
                 RC.titulo(this.jMenuItem3.getText());
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,7 +239,6 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -250,7 +249,6 @@ Registro_Cliente RC=new Registro_Cliente();
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
