@@ -66,15 +66,12 @@ Ventas_Consulta VC= new Ventas_Consulta();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -174,14 +171,6 @@ Ventas_Consulta VC= new Ventas_Consulta();
         });
         jMenu7.add(jMenuItem16);
 
-        jMenuItem17.setText("Actualizar");
-        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem17ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(jMenuItem17);
-
         jMenuBar2.add(jMenu7);
 
         jMenu8.setText("Inventario");
@@ -202,14 +191,6 @@ Ventas_Consulta VC= new Ventas_Consulta();
         });
         jMenu8.add(jMenuItem13);
 
-        jMenuItem14.setText("Actualizar");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
-            }
-        });
-        jMenu8.add(jMenuItem14);
-
         jMenuBar2.add(jMenu8);
 
         jMenu9.setText("Empleado");
@@ -229,14 +210,6 @@ Ventas_Consulta VC= new Ventas_Consulta();
             }
         });
         jMenu9.add(jMenuItem10);
-
-        jMenuItem11.setText("Actualizar");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu9.add(jMenuItem11);
 
         jMenuBar2.add(jMenu9);
 
@@ -314,10 +287,6 @@ Ventas_Consulta VC= new Ventas_Consulta();
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
 
         this.setVisible(false);
@@ -335,10 +304,6 @@ Ventas_Consulta VC= new Ventas_Consulta();
         IC.setEnabled(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
-
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
 
             this.setVisible(false);
@@ -354,10 +319,6 @@ Ventas_Consulta VC= new Ventas_Consulta();
                 VC.setEnabled(true);
         
     }//GEN-LAST:event_jMenuItem16ActionPerformed
-
-    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,13 +372,10 @@ Ventas_Consulta VC= new Ventas_Consulta();
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
