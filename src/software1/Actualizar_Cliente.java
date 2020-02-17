@@ -16,7 +16,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
      */
     public Actualizar_Cliente() {
         initComponents();
-        this.setTitle("SiGCIF-PRIMAX. Actualizar cliente"); 
+        this.setTitle("SiGCIF-PRIMAX ACTUALIZAR CLIENTE"); 
         this.setLocationRelativeTo(null);
     }
 
@@ -56,7 +56,7 @@ public class Actualizar_Cliente extends javax.swing.JFrame {
 
         jLabel9.setText("Seleccione el elemento de búsqueda");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CI/RUC/Pasaporte", "Nombres", "Apellidos", "Placa" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CC", "Nombres", "Apellidos", "Placa" }));
 
         jButton3.setText("Buscar");
 
